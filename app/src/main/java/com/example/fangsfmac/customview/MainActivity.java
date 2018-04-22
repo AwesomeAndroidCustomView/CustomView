@@ -1,13 +1,22 @@
 package com.example.fangsfmac.customview;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity;
+
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int bindLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void init() {
+
+    }
+
+    public void click1(View view) {
+        jumpAct(ProgressLoadingActivity.class);
     }
 }
