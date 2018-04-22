@@ -133,6 +133,7 @@ public class ProgressLoadView extends View {
         Paint.FontMetrics fontMetrics = mCenterTextPaint.getFontMetrics();
         int dy = (int) ((fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom); // 是一个负值
         int baseLine = getHeight() / 2 + dy;
+
         canvas.drawText(text, dx, baseLine, mCenterTextPaint);
 
     }

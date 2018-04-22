@@ -8,11 +8,31 @@
     android:layout_height="match_parent"
     tools:context="com.example.fangsfmac.customview.MainActivity">
 
-
-    <Button
+    <ScrollView
         android:layout_width="match_parent"
-        android:text="仿qq进度条加载"
-        android:onClick="click1"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="仿qq进度条加载"
+                android:onClick="click1"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="textView文字变色"
+                android:onClick="click2"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
 
 </LinearLayout>

@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".progressLoading_01.ProgressLoadingActivity"></activity>
+        <activity android:name=".progressLoading_01.ProgressLoadingActivity" />
+        <activity android:name=".colorTrackTextView_02.ColorTrackTextViewActivity"></activity>
     </application>
 
 </manifest>
