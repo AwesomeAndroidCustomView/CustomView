@@ -121,6 +121,10 @@ public class ProgressView extends View {
         RectF rectF = new RectF(mBorderWidth / 2, mBorderWidth / 2, getWidth() - mBorderWidth / 2, getHeight() - mBorderWidth / 2);
         canvas.drawArc(rectF, 0, 360, false, mInnerPaint);
 
+        if (mCurrentProgress == 0) {
+            return;
+        }
+
         // 绘制外圆
         float sweepAngle = mCurrentProgress / mMaxProgress;
         canvas.drawArc(rectF, 0, 360 * sweepAngle, false, mOutPaint);
@@ -140,11 +144,11 @@ public class ProgressView extends View {
         canvas.drawText(text, dx, baseLine, mTextPaint);
     }
 
-    public void setMaxProgress(float maxProgress) {
+    public synchronized void setMaxProgress(float maxProgress) {
         mMaxProgress = maxProgress;
     }
 
-    public void setCurrentProgress(float currentProgress) {
+    public synchronized void setCurrentProgress(float currentProgress) {
         mCurrentProgress = currentProgress;
         invalidate();
     }

@@ -10,21 +10,44 @@
 
     <com.example.fangsfmac.customview.loadingView_03.ProgressView
         android:id="@+id/progressView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        app:borderWidth1="10dp"
         app:centerTextColor1="@android:color/black"
         app:centerTextSize1="25sp"
-        app:borderWidth1="10dp"
         app:innerColor1="@color/colorPrimary"
         app:outColor1="@color/colorAccent" />
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:onClick="click1"
-        android:text="测试" />
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:onClick="click1"
+            android:text="测试1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:onClick="click2"
+            android:text="测试2" />
+    </LinearLayout>
+
+    <com.example.fangsfmac.customview.loadingView_03.ShapeView
+        android:layout_width="50dp"
+        android:id="@+id/shapeView"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="95dp" />
+
 
 </LinearLayout>

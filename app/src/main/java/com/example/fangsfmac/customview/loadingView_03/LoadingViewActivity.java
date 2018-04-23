@@ -3,6 +3,7 @@ package com.example.fangsfmac.customview.loadingView_03;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
@@ -19,8 +20,12 @@ public class LoadingViewActivity extends BaseActivity {
     ProgressView mProgressView;
     private ValueAnimator mValueAnimator;
 
+    @BindView(R.id.shapeView)
+    ShapeView mShapeView;
+
     @Override
     protected int bindLayout() {
+
         return R.layout.activity_loading_view;
     }
 
@@ -44,5 +49,26 @@ public class LoadingViewActivity extends BaseActivity {
 
     public void click1(View view) {
         mValueAnimator.start();
+    }
+
+    public void click2(View view) {
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        while (true) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mShapeView.exchangeView();
+                                }
+                            });
+
+                            SystemClock.sleep(800);
+
+                        }
+                    }
+                }
+        ).start();
     }
 }
