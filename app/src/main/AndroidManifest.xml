@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".progressLoading_01.ProgressLoadingActivity" />
-        <activity android:name=".colorTrackTextView_02.ColorTrackTextViewActivity"></activity>
+        <activity android:name=".colorTrackTextView_02.ColorTrackTextViewActivity" />
+        <activity android:name=".loadingView_03.LoadingViewActivity"></activity>
     </application>
 
 </manifest>
