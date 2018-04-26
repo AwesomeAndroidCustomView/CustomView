@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.fangsfmac.customview.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <Button
                 android:layout_width="match_parent"
-                android:text="仿qq进度条加载"
+                android:layout_height="wrap_content"
                 android:onClick="click1"
-                android:layout_height="wrap_content" />
+                android:text="仿qq进度条加载" />
 
 
             <Button
                 android:layout_width="match_parent"
-                android:text="textView文字变色"
+                android:layout_height="wrap_content"
                 android:onClick="click2"
-                android:layout_height="wrap_content" />
+                android:text="textView文字变色" />
 
             <Button
                 android:layout_width="match_parent"
-                android:text="进度加载"
+                android:layout_height="wrap_content"
                 android:onClick="click3"
-                android:layout_height="wrap_content" />
+                android:text="进度加载" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click4"
+                android:text="评分控件" />
 
         </LinearLayout>
     </ScrollView>
-
-
 
 
 </LinearLayout>
