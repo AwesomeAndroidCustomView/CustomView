@@ -29,5 +29,21 @@
         <attr name="starFocusBg" format="reference" />
         <attr name="gradeNumber" format="integer" />
     </declare-styleable>
-    
+
+
+    <declare-styleable name="PowerProgressView">
+        <attr name="powerInnerColor" format="color" />
+        <attr name="powerOutColor" format="color" />
+        <attr name="powerBorderWidth" format="dimension" />
+        <attr name="powerCenterTextColor" format="color" />
+        <attr name="powerCenterTextSize" format="dimension" />
+        <!--外部轮廓线的颜色-->
+        <attr name="powerOutlineColor" format="color" />
+        <attr name="powerOutlineBorderWidth" format="dimension" />
+        <attr name="powerDesTextColor" format="color" />
+        <attr name="powerDesTextSize" format="dimension" />
+        <attr name="powerDesText" format="string" />
+        <attr name="powerTextPadding" format="dimension" />
+    </declare-styleable>
+
 </resources>

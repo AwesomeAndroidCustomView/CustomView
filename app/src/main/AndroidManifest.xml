@@ -19,7 +19,8 @@
         <activity android:name=".progressLoading_01.ProgressLoadingActivity" />
         <activity android:name=".colorTrackTextView_02.ColorTrackTextViewActivity" />
         <activity android:name=".loadingView_03.LoadingViewActivity" />
-        <activity android:name=".ratingbarView_04.RatingBarViewActivity"></activity>
+        <activity android:name=".ratingbarView_04.RatingBarViewActivity" />
+        <activity android:name=".powerLoadingView_05.PowerBatteryLevelActivity"></activity>
     </application>
 
 </manifest>

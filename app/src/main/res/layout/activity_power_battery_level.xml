@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity">
+
+    <com.example.fangsfmac.customview.powerLoadingView_05.PowerProgressView
+        android:id="@+id/powerView"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        app:powerBorderWidth="10dp"
+        app:powerCenterTextColor="@android:color/darker_gray"
+        app:powerCenterTextSize="22sp"
+        app:powerDesText="剩余电量"
+        app:powerInnerColor="#E4E5E6"
+        app:powerDesTextSize="15sp"
+        app:powerTextPadding="20dp"
+        app:powerDesTextColor="@android:color/holo_green_dark"
+        app:powerOutColor="#f00"
+        app:powerOutlineColor="#f00" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="click6"
+        android:text="测试" />
+
+</LinearLayout>
