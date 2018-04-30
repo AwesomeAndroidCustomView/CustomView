@@ -17,4 +17,5 @@
         app:starFocusBg="@drawable/star_selected"
         app:starNormalBg="@drawable/star_normal" />
 
+
 </LinearLayout>

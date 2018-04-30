@@ -86,6 +86,43 @@ public class RatingBarView extends View {
             }
 
         }
+    }
 
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        switch (event.getAction()) {
+
+            // 此处要减少onDraw() 的次数
+
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+
+                int currentGrade = (int) (event.getX() / (mStarNormalBitmap.getWidth() + getPaddingLeft()) + 1);
+                Log.i("tag", "onTouchEvent: currentGrade  " + currentGrade);
+
+                // 判断触摸的范围
+                if (currentGrade < 0) {
+                    mCurrentGrade = 0;
+                }
+                if (currentGrade > mGradeNumber) {
+                    mCurrentGrade = mGradeNumber;
+                }
+
+                //减少ondraw() 的次数
+                if (currentGrade == mCurrentGrade) {
+                    return true;
+                }
+
+                mCurrentGrade = currentGrade;
+
+                invalidate();
+
+                break;
+        }
+
+
+        return true;  // 消费action_down的事件
     }
 }
