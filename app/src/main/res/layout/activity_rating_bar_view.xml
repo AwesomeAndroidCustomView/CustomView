@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.fangsfmac.customview.ratingbarView_04.RatingBarViewActivity">
 
 
     <com.example.fangsfmac.customview.ratingbarView_04.RatingBarView
         android:layout_width="wrap_content"
-        app:starNormalBg="@mipmap/ic_launcher"
-        app:starFocusBg="@mipmap/ic_launcher"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="#f2f266"
+        android:padding="15dp"
+        app:gradeNumber="5"
+        app:starFocusBg="@drawable/star_selected"
+        app:starNormalBg="@drawable/star_normal" />
 
 </LinearLayout>

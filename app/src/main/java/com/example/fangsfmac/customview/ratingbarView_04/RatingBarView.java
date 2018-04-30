@@ -7,6 +7,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.fangsfmac.customview.R;
@@ -19,10 +21,13 @@ public class RatingBarView extends View {
 
     private Bitmap mStarNormalBitmap, mStarFocusBitmap;
 
-    private int mGradeNumber ;
+    private int mGradeNumber;
+
+    //当前被选中的星星的个数
+    private int mCurrentGrade = 3;
 
     public RatingBarView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public RatingBarView(Context context, @Nullable AttributeSet attrs) {
@@ -39,16 +44,17 @@ public class RatingBarView extends View {
             throw new RuntimeException("RatingBarView 请设置starNormalBg");
         }
 
-        mStarNormalBitmap = BitmapFactory.decodeResource(getResources(), starNormal);
+        // 只能是图片, svg的图片不能读取出来
+        mStarNormalBitmap = BitmapFactory.decodeResource(context.getResources(), starNormal);
 
         int starFocus = array.getResourceId(R.styleable.RatingBarView_starFocusBg, 0);
         if (starFocus == 0) {
             throw new RuntimeException("RatingBarView 请设置starNormalBg");
         }
 
-        mStarFocusBitmap = BitmapFactory.decodeResource(getResources(), starFocus);
+        mStarFocusBitmap = BitmapFactory.decodeResource(context.getResources(), starFocus);
 
-        mGradeNumber = array.getInteger(R.styleable.RatingBarView_gradeNumber, mGradeNumber);
+        mGradeNumber = array.getInt(R.styleable.RatingBarView_gradeNumber, mGradeNumber);
 
         array.recycle();
 
@@ -58,19 +64,27 @@ public class RatingBarView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
+        // 高度,和宽度,就是 图片的宽高
+        int height = mStarNormalBitmap.getHeight() + getPaddingTop() + getBottom();
+        int width = mStarNormalBitmap.getWidth() * mGradeNumber + (getPaddingLeft() * (mGradeNumber + 1)); // 每个星星之间有空隙,需要计算
+        setMeasuredDimension(width, height);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        int width = mStarNormalBitmap.getWidth();
-
         for (int i = 0; i < mGradeNumber; i++) {
+            int left = mStarNormalBitmap.getWidth() * i;
 
-            int left = width * i;
+            if (mCurrentGrade > i) { // 选中的个数
+                // 绘制 间距和 , 信息在中间的位置
+                canvas.drawBitmap(mStarFocusBitmap, left + (getPaddingLeft() * (i + 1)), (getPaddingTop()) / 2, null);
+            } else {
+                // 绘制 间距和 , 信息在中间的位置
+                canvas.drawBitmap(mStarNormalBitmap, left + (getPaddingLeft() * (i + 1)), (getPaddingTop()) / 2, null);
+            }
 
-            canvas.drawBitmap(mStarNormalBitmap, left, 0, null);
         }
 
     }
