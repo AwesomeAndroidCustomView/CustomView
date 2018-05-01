@@ -6,15 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity">
 
+    <TextView
+        android:id="@+id/tvLetter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/tv_circle_shape"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25sp" />
+
 
     <com.example.fangsfmac.customview.letterIndexView_06.LetterIndexView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/letterIndex"
         android:layout_alignParentRight="true"
-        app:letterDefaultColor="@android:color/darker_gray"
-        app:letterSelectedColor="@android:color/holo_blue_dark"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp"
+        app:letterDefaultColor="@android:color/darker_gray"
+        app:letterSelectedColor="@android:color/holo_blue_dark" />
 
 
 </RelativeLayout>
