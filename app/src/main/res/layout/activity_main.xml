@@ -43,9 +43,15 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:text="自定义剩余电量view"
+                android:layout_height="wrap_content"
                 android:onClick="click5"
-                android:layout_height="wrap_content" />
+                android:text="自定义剩余电量view" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click6"
+                android:text="自定义字母索引列表" />
 
         </LinearLayout>
     </ScrollView>

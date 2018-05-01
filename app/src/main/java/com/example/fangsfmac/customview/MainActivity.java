@@ -3,6 +3,7 @@ package com.example.fangsfmac.customview;
 import android.view.View;
 
 import com.example.fangsfmac.customview.colorTrackTextView_02.ColorTrackTextViewActivity;
+import com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity;
 import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
 import com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity;
 import com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity;
@@ -39,5 +40,9 @@ public class MainActivity extends BaseActivity {
 
     public void click5(View view) {
         jumpAct(PowerBatteryLevelActivity.class);
+    }
+
+    public void click6(View view) {
+        jumpAct(LetterIndexActivity.class);
     }
 }

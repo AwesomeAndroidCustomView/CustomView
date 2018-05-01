@@ -22,8 +22,7 @@
         <attr name="centerTextSize1" format="dimension" />
     </declare-styleable>
 
-    
-    
+
     <declare-styleable name="RatingBarView">
         <attr name="starNormalBg" format="reference" />
         <attr name="starFocusBg" format="reference" />
@@ -44,6 +43,12 @@
         <attr name="powerDesTextSize" format="dimension" />
         <attr name="powerDesText" format="string" />
         <attr name="powerTextPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LetterIndexView">
+        <attr name="letterDefaultColor" format="color" />
+        <attr name="letterSelectedColor" format="color" />
+        <attr name="letterTextSize" format="dimension" />
     </declare-styleable>
 
 </resources>
