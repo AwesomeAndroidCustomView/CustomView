@@ -62,7 +62,7 @@ public class TagLayoutView extends ViewGroup {
             // 获取子view 的margin值
             ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
 
-            if ((lineWidht + params.leftMargin + params.rightMargin) > width) {
+            if ((lineWidht + params.leftMargin + params.rightMargin + childView.getMeasuredWidth()) > width) {
                 // 下一行, 高度一直累加, 设置width,不累加
                 height += childView.getMeasuredHeight() + params.topMargin + params.bottomMargin;
                 lineWidht = childView.getMeasuredWidth() + params.leftMargin + params.rightMargin;
