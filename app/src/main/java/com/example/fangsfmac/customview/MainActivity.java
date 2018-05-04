@@ -8,6 +8,7 @@ import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
 import com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity;
 import com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity;
 import com.example.fangsfmac.customview.ratingbarView_04.RatingBarViewActivity;
+import com.example.fangsfmac.customview.tagLayout_07.TagLayoutActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -44,5 +45,9 @@ public class MainActivity extends BaseActivity {
 
     public void click6(View view) {
         jumpAct(LetterIndexActivity.class);
+    }
+
+    public void click7(View view) {
+        jumpAct(TagLayoutActivity.class);
     }
 }

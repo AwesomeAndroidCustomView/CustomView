@@ -53,6 +53,12 @@
                 android:onClick="click6"
                 android:text="自定义字母索引列表" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click7"
+                android:text="自定义viewGroup流式布局" />
+
         </LinearLayout>
     </ScrollView>
 

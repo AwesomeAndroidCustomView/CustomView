@@ -21,7 +21,8 @@
         <activity android:name=".loadingView_03.LoadingViewActivity" />
         <activity android:name=".ratingbarView_04.RatingBarViewActivity" />
         <activity android:name=".powerLoadingView_05.PowerBatteryLevelActivity" />
-        <activity android:name=".letterIndexView_06.LetterIndexActivity"></activity>
+        <activity android:name=".letterIndexView_06.LetterIndexActivity" />
+        <activity android:name=".tagLayout_07.TagLayoutActivity"></activity>
     </application>
 
 </manifest>

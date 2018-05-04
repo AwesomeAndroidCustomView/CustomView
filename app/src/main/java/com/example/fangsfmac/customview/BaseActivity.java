@@ -16,7 +16,7 @@ import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    protected    String TAG = this.getClass().getSimpleName();
+    protected String TAG = this.getClass().getSimpleName();
 
     private Unbinder mBind;
 
