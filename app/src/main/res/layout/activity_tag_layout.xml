@@ -9,57 +9,58 @@
 
     <com.example.fangsfmac.customview.tagLayout_07.TagLayoutView
         android:layout_width="match_parent"
+        android:id="@+id/tagLayout"
         android:layout_height="wrap_content"
         android:background="#ff0">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="新闻01" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="新闻01" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="新闻02" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="新闻02" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="新闻03" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="30dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="新闻03" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="新闻00004" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="新闻00004" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="娱乐01" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="娱乐01" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="新闻0000999" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="新闻0000999" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rect_shape"
-            android:text="娱乐00001" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:background="@drawable/rect_shape"-->
+            <!--android:text="娱乐00001" />-->
 
 
     </com.example.fangsfmac.customview.tagLayout_07.TagLayoutView>

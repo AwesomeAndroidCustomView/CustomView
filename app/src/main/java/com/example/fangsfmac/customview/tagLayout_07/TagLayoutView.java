@@ -18,6 +18,7 @@ public class TagLayoutView extends ViewGroup {
 
     // 存储标签的所有view
     private List<List<View>> mChildViews = new ArrayList<>();
+    private TagAdapter mAdapter;
 
     public TagLayoutView(Context context) {
         super(context);
@@ -63,8 +64,8 @@ public class TagLayoutView extends ViewGroup {
             ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
 
             if ((lineWidht + params.leftMargin + params.rightMargin + childView.getMeasuredWidth()) > width) {
-                // 下一行, 高度一直累加, 设置width,不累加
-                height += childView.getMeasuredHeight() + params.topMargin + params.bottomMargin;
+                // 下一行, 高度一直累加, 设置width,不累加  (需要加一行的最大的宽度)
+                height += maxHeight;
                 lineWidht = childView.getMeasuredWidth() + params.leftMargin + params.rightMargin;
                 //下一行, 也就是另外一行的view
                 childViews = new ArrayList<>();
@@ -95,7 +96,7 @@ public class TagLayoutView extends ViewGroup {
         // 遍历整个view的集合
         for (List<View> childViews : mChildViews) {
             left = getPaddingLeft();
-
+            int maxHeight = 0;
             for (View childView : childViews) {     //遍历该行的view, 摆放他的位置
                 ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childView.getLayoutParams();
 
@@ -108,13 +109,38 @@ public class TagLayoutView extends ViewGroup {
                 childView.layout(left, childTop, right, bottom);  // 注: left ,top 一直要进行累加
                 // left 叠加
                 left += childView.getMeasuredWidth() + params.rightMargin;
+
+                // 高度累加, 累加最大高度top 的值
+                int childHeight = childView.getMeasuredHeight() + params.topMargin + params.bottomMargin;
+                maxHeight = Math.max(childHeight, maxHeight);
             }
 
             // 下一行view 的 高度累加
-            //累加高度,摆放位置,不断叠加top值  ()
-            ViewGroup.MarginLayoutParams params = (MarginLayoutParams) childViews.get(0).getLayoutParams();
-            top += childViews.get(0).getMeasuredHeight() + params.topMargin + params.bottomMargin;
+            //累加高度,摆放位置,不断叠加top值  (注: 需要计算出最大的高度)
+            top += maxHeight;
         }
+
+    }
+
+    public void setAdapter(TagAdapter tagAdapter) {
+        if (tagAdapter == null) {
+            throw new NullPointerException("tagAdapter 不能为空");
+        }
+
+        //清空子view, 预防调用多次
+        removeAllViews();
+
+        mAdapter = tagAdapter;
+
+        int childViewCount = mAdapter.getCount();
+
+        for (int i = 0; i < childViewCount; i++) {
+
+            View childView = mAdapter.getView(i, this);
+            addView(childView);
+
+        }
+
 
     }
 
