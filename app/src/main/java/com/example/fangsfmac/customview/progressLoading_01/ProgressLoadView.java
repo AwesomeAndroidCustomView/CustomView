@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.fangsfmac.customview.R;
@@ -135,6 +136,6 @@ public class ProgressLoadView extends View {
         int baseLine = getHeight() / 2 + dy;
 
         canvas.drawText(text, dx, baseLine, mCenterTextPaint);
-
     }
+
 }

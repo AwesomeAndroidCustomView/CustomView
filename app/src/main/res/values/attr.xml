@@ -51,4 +51,9 @@
         <attr name="letterTextSize" format="dimension" />
     </declare-styleable>
 
+
+    <declare-styleable name="SlideMenuLayout" >
+        <attr name="menuRightMargin" format="dimension" />
+    </declare-styleable>
+
 </resources>

@@ -3,6 +3,7 @@ package com.example.fangsfmac.customview;
 import android.view.View;
 
 import com.example.fangsfmac.customview.colorTrackTextView_02.ColorTrackTextViewActivity;
+import com.example.fangsfmac.customview.kuguo_slideMenu_08.KuGuoSlideMenuActivity;
 import com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity;
 import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
 import com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity;
@@ -49,5 +50,9 @@ public class MainActivity extends BaseActivity {
 
     public void click7(View view) {
         jumpAct(TagLayoutActivity.class);
+    }
+
+    public void click8(View view) {
+        jumpAct(KuGuoSlideMenuActivity.class);
     }
 }

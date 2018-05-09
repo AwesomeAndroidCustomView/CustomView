@@ -59,6 +59,12 @@
                 android:onClick="click7"
                 android:text="自定义viewGroup流式布局" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click8"
+                android:text="酷狗侧滑" />
+
         </LinearLayout>
     </ScrollView>
 

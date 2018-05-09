@@ -22,7 +22,8 @@
         <activity android:name=".ratingbarView_04.RatingBarViewActivity" />
         <activity android:name=".powerLoadingView_05.PowerBatteryLevelActivity" />
         <activity android:name=".letterIndexView_06.LetterIndexActivity" />
-        <activity android:name=".tagLayout_07.TagLayoutActivity"></activity>
+        <activity android:name=".tagLayout_07.TagLayoutActivity" />
+        <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity"></activity>
     </application>
 
 </manifest>
