@@ -9,8 +9,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.fangsfmac.customview.R;
 
@@ -137,5 +138,7 @@ public class ProgressLoadView extends View {
 
         canvas.drawText(text, dx, baseLine, mCenterTextPaint);
     }
+
+
 
 }
