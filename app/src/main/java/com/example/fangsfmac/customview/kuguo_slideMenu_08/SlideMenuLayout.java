@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 
 import com.example.fangsfmac.customview.R;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by fangsf on 2018/5/9.
@@ -26,6 +29,33 @@ public class SlideMenuLayout extends HorizontalScrollView {
     private View mMenuView, mContentView;
 
     private int mMenuWidth;
+
+    // 菜单是否已经打开
+    private boolean mIsMenuOpen = false;
+
+    // 处理 侧滑过程中的快速滑动
+    private GestureDetector mGestureDetector;
+    private GestureDetector.OnGestureListener mGestureListener = new GestureDetector.SimpleOnGestureListener() {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+
+            Log.i(TAG, "onFling: velocityX " + velocityX);
+            if (mIsMenuOpen) {
+                // 打开了, 正在快速滑动将他关闭
+                if (velocityX < 0) {
+                    closeMenu();
+                    return true; // 快速关闭触发时, 返回true.在onTouchEvent() 处理
+                }
+            } else {
+                if (velocityX > 0) {
+                    openMenu();
+                    return true;
+                }
+            }
+
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
+    };
 
     public SlideMenuLayout(Context context) {
         this(context, null);
@@ -46,7 +76,11 @@ public class SlideMenuLayout extends HorizontalScrollView {
 
         array.recycle();
 
+        // 处理快速滑动
+        mGestureDetector = new GestureDetector(context, mGestureListener);
+
     }
+
 
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
@@ -107,37 +141,36 @@ public class SlideMenuLayout extends HorizontalScrollView {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_UP:
-                int upX = (int) ev.getX();
-                if (upX > mMenuWidth) {
-                    //关闭
-                    closeMenu();
-                } else {
-                    // 打开
-                    openMenu();
-                }
-                return true;
 
-            case MotionEvent.ACTION_DOWN:
-                break;
-
-            case MotionEvent.ACTION_MOVE:
-                break;
-
-            default:
-                break;
+        if (mGestureDetector.onTouchEvent(ev)) {
+            return true; // 当快速 滑动触发了的时候,消费事件
         }
+
+        if (ev.getAction() == MotionEvent.ACTION_UP) {
+            int currentScrollX = getScrollX(); // 获取滑动的x 的位置
+            if (currentScrollX > mMenuWidth) {
+                //关闭
+                closeMenu();
+            } else {
+                // 打开
+                openMenu();
+            }
+            return true;
+        }
+
 
         return super.onTouchEvent(ev);
     }
 
+
     private void openMenu() {
         smoothScrollTo(mMenuWidth, 0);
+        mIsMenuOpen = true;
     }
 
     private void closeMenu() {
         smoothScrollTo(0, 0);
+        mIsMenuOpen = false;
     }
 
     private int dip2px(int dp) {
