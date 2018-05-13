@@ -151,9 +151,8 @@ public class SlideMenuLayout extends HorizontalScrollView {
             float x = ev.getX();
             // 菜单是打开的状态, 点击右边contentView, 需要关闭, 并且子view,不响应事件
             if (x > mMenuWidth) {
-                closeMenu();
                 mIsIntercept = true;
-                return true;  // 拦截子view的事件, 子view 不响应任何的事件, -> 会走viewGroup 的TouchEvent(),
+                return true;  // 拦截子view的事件, 子view 不响应任何的事件, -> 注: 会走viewGroup 的TouchEvent(),
             }
         }
 
@@ -163,9 +162,12 @@ public class SlideMenuLayout extends HorizontalScrollView {
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         Log.i(TAG, "onTouchEvent: " + ev.getAction());
-//        if (mIsIntercept && ev.getAction() == MotionEvent.ACTION_UP) {
-//            return true;  // 拦截了事件, 不调用自身的viewGroup的onTouchEvent() 方法
-//        }
+        if (mIsIntercept) {
+            if (ev.getAction() == MotionEvent.ACTION_UP) {
+                closeMenu();  // 当按下了右边的内容的contentview 的时候, 如果是手指抬起的时候,消费事件, 关闭侧滑
+                return true;  // 拦截了事件, 不调用自身的viewGroup的onTouchEvent() 方法
+            }
+        }
 
         if (mGestureDetector.onTouchEvent(ev)) {
             return true; // 当快速 滑动触发了的时候,消费事件
