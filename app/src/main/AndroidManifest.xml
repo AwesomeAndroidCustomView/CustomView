@@ -23,7 +23,8 @@
         <activity android:name=".powerLoadingView_05.PowerBatteryLevelActivity" />
         <activity android:name=".letterIndexView_06.LetterIndexActivity" />
         <activity android:name=".tagLayout_07.TagLayoutActivity" />
-        <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity"></activity>
+        <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity" />
+        <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity"></activity>
     </application>
 
 </manifest>

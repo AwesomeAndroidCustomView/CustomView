@@ -1,8 +1,8 @@
-package com.example.fangsfmac.customview.kuguo_slideMenu_08;
+package com.example.fangsfmac.customview.qqSlideMenu_09;
 
 import android.content.Context;
-import android.content.IntentFilter;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
+import android.widget.RelativeLayout;
 
 import com.example.fangsfmac.customview.R;
 
@@ -24,9 +25,9 @@ import static android.content.ContentValues.TAG;
  * Useful:
  */
 
-public class SlideMenuLayout extends HorizontalScrollView {
+public class QQSlideMenuLayout extends HorizontalScrollView {
 
-    private View mMenuView, mContentView;
+    private View mMenuView, mContentView, mShadeView;
 
     private int mMenuWidth;
 
@@ -60,20 +61,20 @@ public class SlideMenuLayout extends HorizontalScrollView {
         }
     };
 
-    public SlideMenuLayout(Context context) {
+    public QQSlideMenuLayout(Context context) {
         this(context, null);
     }
 
-    public SlideMenuLayout(Context context, AttributeSet attrs) {
+    public QQSlideMenuLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SlideMenuLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public QQSlideMenuLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.SlideMenuLayout);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.QQSlideMenuLayout);
 
-        int mMenuRightMargin = array.getDimensionPixelSize(R.styleable.SlideMenuLayout_menuRightMargin, dip2px(60));
+        int mMenuRightMargin = array.getDimensionPixelSize(R.styleable.QQSlideMenuLayout_QQmenuRightMargin, dip2px(60));
 
         mMenuWidth = getScreenWidth(context) - mMenuRightMargin;
 
@@ -92,26 +93,16 @@ public class SlideMenuLayout extends HorizontalScrollView {
 
         // 算出,梯度值, 往右边滑动, contentView,缩放,
         float scale = 1f * l / mMenuWidth;  // 梯度值的变化是 1 -> 0
-        // 往右边滑动,contentView, 需要缩放的范围是 最大是1f,最小是0.7f
-        float rightScale = 0.7f + (scale * 0.3f);
-        Log.i("TAG", "onScrollChanged: rightScale " + rightScale);
-        ViewCompat.setPivotX(mContentView, 0);
-        ViewCompat.setPivotY(mContentView, getScreenWidth(getContext()) / 2);
-        ViewCompat.setScaleX(mContentView, rightScale);
-        ViewCompat.setScaleY(mContentView, rightScale);
+        Log.i(TAG, "onScrollChanged: scale " + scale);
 
-        //设置 左边menuView的透明度, 0.5f -> 1f ,半透明到完全透明
-        float leftAlpha = 0.5f + (1 - scale) * 0.5f;
-        Log.i("TAG", "onScrollChanged: leftAlpha " + leftAlpha);
-        ViewCompat.setAlpha(mMenuView, leftAlpha);
+        // 设置右边的阴影的部分,
+        float rightAlpha = 1 - scale; // 1 -> 0 的值变化
+        // mShadeView.setAlpha(rightAlpha); // 和下面是一样的
+        ViewCompat.setAlpha(mShadeView, rightAlpha);
 
-        //左边的缩放文字 0.7 -> 1
-        float leftScale = 0.7f + (1 - scale) * 0.3f;
-        ViewCompat.setScaleY(mMenuView, leftScale);
-        ViewCompat.setScaleX(mMenuView, leftScale);
 
-        // 设置左边平移的文字
-        ViewCompat.setTranslationX(mMenuView, 0.25f * l);
+        // 设置左边边平移的文字
+        ViewCompat.setTranslationX(mMenuView, 0.6f * l);
     }
 
     @Override
@@ -137,9 +128,23 @@ public class SlideMenuLayout extends HorizontalScrollView {
         mMenuView.setLayoutParams(menuViewParams);  // android 7.0 必须这样方式,才能有效果
 
         mContentView = container.getChildAt(1);
+
+        //先将 需要添加阴影的view, 抽离出来, 在这个view的最外层添加一个view, 这个view将原来需要的操作的view 添加进去, 最外层的view, add 一个阴影的view
+
+
         ViewGroup.LayoutParams contentViewParams = mContentView.getLayoutParams();
         contentViewParams.width = getScreenWidth(getContext());
         mContentView.setLayoutParams(contentViewParams);
+
+        container.removeView(mContentView);
+        RelativeLayout relativeLayout = new RelativeLayout(getContext());
+        relativeLayout.addView(mContentView);
+        mShadeView = new View(getContext());
+        mShadeView.setBackgroundColor(Color.parseColor("#99000000"));
+        relativeLayout.addView(mShadeView);
+        container.addView(relativeLayout);
+
+        relativeLayout.getLayoutParams().width = getScreenWidth(getContext());
     }
 
     @Override

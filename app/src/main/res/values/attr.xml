@@ -56,4 +56,7 @@
         <attr name="menuRightMargin" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="QQSlideMenuLayout" >
+        <attr name="QQmenuRightMargin" format="dimension" />
+    </declare-styleable>
 </resources>
