@@ -71,6 +71,12 @@
                 android:onClick="click9"
                 android:text="QQ侧滑" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click10"
+                android:text="自定义汽车 之家折叠view" />
+
 
         </LinearLayout>
     </ScrollView>

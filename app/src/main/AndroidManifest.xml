@@ -24,7 +24,8 @@
         <activity android:name=".letterIndexView_06.LetterIndexActivity" />
         <activity android:name=".tagLayout_07.TagLayoutActivity" />
         <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity" />
-        <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity"></activity>
+        <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity" />
+        <activity android:name=".foldView_10.FoldViewActivity"></activity>
     </application>
 
 </manifest>
