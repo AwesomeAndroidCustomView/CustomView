@@ -77,6 +77,17 @@
                 android:onClick="click10"
                 android:text="自定义汽车 之家折叠view" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click11"
+                android:text="状态栏沉浸式模式" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click12"
+                android:text="自定义behavior" />
 
         </LinearLayout>
     </ScrollView>

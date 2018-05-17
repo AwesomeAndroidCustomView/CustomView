@@ -25,7 +25,9 @@
         <activity android:name=".tagLayout_07.TagLayoutActivity" />
         <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity" />
         <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity" />
-        <activity android:name=".foldView_10.FoldViewActivity"></activity>
+        <activity android:name=".foldView_10.FoldViewActivity" />
+        <activity android:name=".statusBar_11.StatusActivity" />
+        <activity android:name=".custom_Behavior_12.CustomBehaviorActivity"></activity>
     </application>
 
 </manifest>
