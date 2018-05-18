@@ -89,6 +89,12 @@
                 android:onClick="click12"
                 android:text="自定义behavior" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click13"
+                android:text="58同城加载动画" />
+
         </LinearLayout>
     </ScrollView>
 

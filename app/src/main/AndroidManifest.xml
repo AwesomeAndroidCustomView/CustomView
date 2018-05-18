@@ -27,7 +27,8 @@
         <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity" />
         <activity android:name=".foldView_10.FoldViewActivity" />
         <activity android:name=".statusBar_11.StatusActivity" />
-        <activity android:name=".custom_Behavior_12.CustomBehaviorActivity"></activity>
+        <activity android:name=".custom_Behavior_12.CustomBehaviorActivity" />
+        <activity android:name=".FiveEightCityLoad_13.LoadViewActivity"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.fangsfmac.customview;
 
 import android.view.View;
 
+import com.example.fangsfmac.customview.FiveEightCityLoad_13.LoadViewActivity;
 import com.example.fangsfmac.customview.colorTrackTextView_02.ColorTrackTextViewActivity;
 import com.example.fangsfmac.customview.custom_Behavior_12.CustomBehaviorActivity;
 import com.example.fangsfmac.customview.foldView_10.FoldViewActivity;
@@ -74,5 +75,9 @@ public class MainActivity extends BaseActivity {
 
     public void click12(View view) {
         jumpAct(CustomBehaviorActivity.class);
+    }
+
+    public void click13(View view) {
+        jumpAct(LoadViewActivity.class);
     }
 }
