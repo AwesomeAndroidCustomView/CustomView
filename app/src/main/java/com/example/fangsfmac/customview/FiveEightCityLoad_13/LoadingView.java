@@ -35,7 +35,7 @@ public class LoadingView extends LinearLayout {
     private boolean mIsStopAni = false;
 
     // 动画执行的时间
-    private final int ANIMATOR_DURATION = 950;
+    private final int ANIMATOR_DURATION = 750;
 
 
     public LoadingView(Context context) {

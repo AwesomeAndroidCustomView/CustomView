@@ -97,10 +97,10 @@ public class ShapeView extends View {
                 if (mPath == null) {
                     mPath = new Path();
                     mPath.moveTo(getWidth() / 2, 0);
-                    // (getWidth()/2 * Math.sqrt(3)) 求出y的位置, 是一个 等边三角形
+                    // (getWidth()/2 * Math.sqrt(3)) 求出y的位置, 是一个 等边三角形,开根号
                     mPath.lineTo(0, (float) (getWidth() / 2 * Math.sqrt(3)));
                     mPath.lineTo(getWidth(), (float) (getWidth() / 2 * Math.sqrt(3)));
-                    mPath.close();
+                    mPath.close();  // 关闭闭合
                 }
 
                 canvas.drawPath(mPath, mPaint);

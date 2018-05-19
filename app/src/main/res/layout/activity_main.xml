@@ -95,6 +95,12 @@
                 android:onClick="click13"
                 android:text="58同城加载动画" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click14"
+                android:text="多条目下拉筛选" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -28,7 +28,8 @@
         <activity android:name=".foldView_10.FoldViewActivity" />
         <activity android:name=".statusBar_11.StatusActivity" />
         <activity android:name=".custom_Behavior_12.CustomBehaviorActivity" />
-        <activity android:name=".FiveEightCityLoad_13.LoadViewActivity"></activity>
+        <activity android:name=".FiveEightCityLoad_13.LoadViewActivity" />
+        <activity android:name=".DropDownView_14.DropDownActivity"></activity>
     </application>
 
 </manifest>
