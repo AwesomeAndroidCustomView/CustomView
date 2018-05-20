@@ -4,6 +4,8 @@ import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 /**
  * Created by fangsf on 2018/5/19.
  * Useful: Adapter 设计模式,
@@ -32,7 +34,7 @@ public abstract class BaseMenuAdapter {
     public abstract View getTabMenuView(int position, ViewGroup parent);
 
     // 获取菜单的view
-    public abstract View getMenuView(int position, ViewGroup parent);
+    public abstract List<View> getMenuView(int position, ViewGroup parent);
 
 
     // 获取view 的个数
