@@ -19,4 +19,13 @@ public abstract class BaseMenuAdapter {
 
     // 获取view 的个数
     public abstract int getCount();
+
+    public void menuClose(View tabView) {
+
+
+    }
+
+    public void menuOpen(View tabView) {
+
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.fangsfmac.customview.DropDownView_14;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class ListDataScreenAdapter extends BaseMenuAdapter {
 
         TextView view = (TextView) LayoutInflater.from(mContext).inflate(R.layout.text_view, parent, false);
         view.setText(mItems[position]);
-
+        view.setTextColor(Color.BLACK);
         return view;
     }
 
@@ -38,6 +39,18 @@ public class ListDataScreenAdapter extends BaseMenuAdapter {
         view.setText(mItems[position]);
 
         return view;
+    }
+
+    @Override
+    public void menuClose(View tabView) {
+        TextView tabTv = (TextView) tabView;
+        tabTv.setTextColor(Color.BLACK);
+    }
+
+    @Override
+    public void menuOpen(View tabView) {
+        TextView tabTv = (TextView) tabView;
+        tabTv.setTextColor(Color.RED);
     }
 
     @Override

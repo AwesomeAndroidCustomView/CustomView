@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -21,6 +22,8 @@ import android.widget.Toast;
  */
 
 public class ListDataScreenView extends LinearLayout implements View.OnClickListener {
+
+    private static final String TAG = ListDataScreenView.class.getSimpleName();
 
     private Context mContext;
     // tabView, 条目选择的view
@@ -36,7 +39,13 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     private final int DURATION_ANI = 350;
 
     private BaseMenuAdapter mAdapter;
+    // 菜单内容的高度
     private int mMenuContainerHeight;
+
+    private int mCurrentPosition = -1;
+
+    // 动画是否正在执行
+    private boolean mAnimatorExecute ;
 
     public ListDataScreenView(Context context) {
         this(context, null);
@@ -51,7 +60,6 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
 
         mContext = context;
         initLayout();
-
     }
 
     private void initLayout() {
@@ -88,16 +96,18 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.i(TAG, "onMeasure: ");
 
         int height = MeasureSpec.getSize(heightMeasureSpec);
-
-        ViewGroup.LayoutParams containerViewParams = mMenuContainerView.getLayoutParams();
-        mMenuContainerHeight = (int) (height * 75f / 100);
-        containerViewParams.height = mMenuContainerHeight;  // 设置内容显示的布局是 屏幕高度的 75%,
-        mMenuContainerView.setLayoutParams(containerViewParams);
-        // 首次进来应该是没有打开菜单的
-        mMenuContainerView.setTranslationY(-mMenuContainerHeight);
-
+        // 防止多次重新测量
+        if (mMenuContainerHeight == 0) {
+            ViewGroup.LayoutParams containerViewParams = mMenuContainerView.getLayoutParams();
+            mMenuContainerHeight = (int) (height * 75f / 100);
+            containerViewParams.height = mMenuContainerHeight;  // 设置内容显示的布局是 屏幕高度的 75%,
+            mMenuContainerView.setLayoutParams(containerViewParams);
+            // 首次进来应该是没有打开菜单的
+            mMenuContainerView.setTranslationY(-mMenuContainerHeight);
+        }
     }
 
     public void setAdapter(BaseMenuAdapter adapter) {
@@ -120,7 +130,6 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
             menuView.setVisibility(GONE);  // 没有选择的时候,不打开布局
             mMenuContainerView.addView(menuView);
 
-
         }
     }
 
@@ -129,20 +138,60 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
         tabView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mCurrentPosition == -1) {
+                    openMenu(position);
+                } else {
+                    if (mCurrentPosition == position) {
+                        // 如果是相同的条目,则关闭,否则切换条目
+                        closeMenu();
+                    } else {
+                        // 菜单的view
+                        View currentMenu = mMenuContainerView.getChildAt(mCurrentPosition);
+                        currentMenu.setVisibility(View.GONE); //注意切换布局的时候,这里设置为gone, 会重新执行onMeasure()方法
+                        mAdapter.menuClose(mTabMenuView.getChildAt(mCurrentPosition));
+                        mCurrentPosition = position;
+                        currentMenu = mMenuContainerView.getChildAt(mCurrentPosition);
+                        currentMenu.setVisibility(View.VISIBLE);
+                        mAdapter.menuOpen(mTabMenuView.getChildAt(mCurrentPosition));
+                    }
+                }
 
-                openMenu();
             }
         });
     }
 
-    private void openMenu() {
+    private void openMenu(int position) {
+        if (mAnimatorExecute) {
+            return;
+        }
         // 打开菜单的动画
+        mCurrentPosition = position;
+
+        mShadowView.setVisibility(View.VISIBLE);
+        mShadowView.setVisibility(View.VISIBLE);
+        // 获取当前位置显示当前菜单，菜单是加到了菜单容器
+        View menuView = mMenuContainerView.getChildAt(position);
+        menuView.setVisibility(View.VISIBLE);
+
         ObjectAnimator middleMenuAni = ObjectAnimator.ofFloat(mMenuContainerView, "translationY", -mMenuContainerHeight, 0);
         middleMenuAni.setDuration(DURATION_ANI);
+        middleMenuAni.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimatorExecute = false;
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                mAdapter.menuOpen(mTabMenuView.getChildAt(mCurrentPosition));
+                mAnimatorExecute = true;
+            }
+        });
         middleMenuAni.start();
 
         //开启阴影的动画
-        mShadowView.setVisibility(VISIBLE);
         ObjectAnimator shadowViewAni = ObjectAnimator.ofFloat(mShadowView, "alpha", 0, 1f);
         shadowViewAni.setDuration(DURATION_ANI);
         shadowViewAni.start();
@@ -151,14 +200,37 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     @Override
     public void onClick(View v) {
         // 关闭menu
-        closeMenu();
+        if (mCurrentPosition != -1) {
+            closeMenu();
+        }
     }
 
 
     private void closeMenu() {
+        if (mAnimatorExecute) {
+            return;
+        }
+
         // close菜单的动画
         ObjectAnimator middleMenuAni = ObjectAnimator.ofFloat(mMenuContainerView, "translationY", 0, -mMenuContainerHeight);
         middleMenuAni.setDuration(DURATION_ANI);
+        middleMenuAni.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                View menuView = mMenuContainerView.getChildAt(mCurrentPosition);
+                menuView.setVisibility(View.GONE);
+                mAnimatorExecute = false;
+                mCurrentPosition = -1;
+            }
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                super.onAnimationStart(animation);
+                mAdapter.menuClose(mTabMenuView.getChildAt(mCurrentPosition));
+                mAnimatorExecute = true;
+            }
+        });
         middleMenuAni.start();
 
         //close阴影的动画
