@@ -10,6 +10,7 @@ import com.example.fangsfmac.customview.foldView_10.FoldViewActivity;
 import com.example.fangsfmac.customview.kuguo_slideMenu_08.KuGuoSlideMenuActivity;
 import com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity;
 import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
+import com.example.fangsfmac.customview.loadingView_15.LoadingActivity;
 import com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity;
 import com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity;
 import com.example.fangsfmac.customview.qqSlideMenu_09.QQSlideMenuActivity;
@@ -85,5 +86,9 @@ public class MainActivity extends BaseActivity {
     public void click14(View view) {
         jumpAct(DropDownActivity.class);
 
+    }
+
+    public void click15(View view) {
+        jumpAct(LoadingActivity.class);
     }
 }

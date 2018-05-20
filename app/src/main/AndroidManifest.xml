@@ -29,7 +29,8 @@
         <activity android:name=".statusBar_11.StatusActivity" />
         <activity android:name=".custom_Behavior_12.CustomBehaviorActivity" />
         <activity android:name=".FiveEightCityLoad_13.LoadViewActivity" />
-        <activity android:name=".DropDownView_14.DropDownActivity"></activity>
+        <activity android:name=".DropDownView_14.DropDownActivity" />
+        <activity android:name=".loadingView_15.LoadingActivity"></activity>
     </application>
 
 </manifest>

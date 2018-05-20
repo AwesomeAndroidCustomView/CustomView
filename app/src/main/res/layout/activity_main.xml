@@ -101,6 +101,11 @@
                 android:onClick="click14"
                 android:text="多条目下拉筛选" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click15"
+                android:text="花束直播加载效果" />
         </LinearLayout>
     </ScrollView>
 
