@@ -43,7 +43,7 @@ public class ListDataScreenAdapter extends BaseMenuAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "close", Toast.LENGTH_SHORT).show();
-
+                closeMenu();
             }
         });
 

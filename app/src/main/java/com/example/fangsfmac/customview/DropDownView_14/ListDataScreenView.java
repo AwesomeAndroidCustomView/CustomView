@@ -25,6 +25,8 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
 
     private static final String TAG = ListDataScreenView.class.getSimpleName();
 
+    private MenuAdapterObserver mObserver;
+
     private Context mContext;
     // tabView, 条目选择的view
     private LinearLayout mTabMenuView;
@@ -45,7 +47,7 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
     private int mCurrentPosition = -1;
 
     // 动画是否正在执行
-    private boolean mAnimatorExecute ;
+    private boolean mAnimatorExecute;
 
     public ListDataScreenView(Context context) {
         this(context, null);
@@ -110,8 +112,23 @@ public class ListDataScreenView extends LinearLayout implements View.OnClickList
         }
     }
 
+    private class MenuAdapterObserver extends MenuObserver {
+
+        @Override
+        public void closeMenu() {
+            ListDataScreenView.this.closeMenu(); // 关闭菜单
+        }
+    }
+
     public void setAdapter(BaseMenuAdapter adapter) {
+
+        // 观察者
+        if (mAdapter != null && mObserver != null) {
+            mAdapter.unregisterDataSetObserver(mObserver);
+        }
         this.mAdapter = adapter;
+        mObserver = new MenuAdapterObserver();
+        mAdapter.registerDataSetObserver(mObserver);
 
         int childViewCount = mAdapter.getCount();
         for (int i = 0; i < childViewCount; i++) {
