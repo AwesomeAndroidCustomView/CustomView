@@ -26,6 +26,23 @@ public class StatusActivity extends AppCompatActivity {
     }
 
     public void click3(View view) {
-        SystemBarHelper.setActivityTranslucent(this);
+        SystemBarHelper.setBarTransparent(this);
+    }
+
+    public void click4(View view) {
+        SystemBarHelper.setNavigationBarHide(this);
+    }
+
+
+    public void click5(View view) {
+        SystemBarHelper.setFullActivity(this);
+    }
+
+    public void click6(View view) {
+        SystemBarHelper.setBarAndNavBarTransparent(this);
+    }
+
+    public void click7(View view) {
+        SystemBarHelper.setNavigationBarColor(this, Color.RED);
     }
 }

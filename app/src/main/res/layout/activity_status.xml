@@ -16,13 +16,37 @@
 
     <Button
         android:layout_width="match_parent"
-        android:onClick="click2"
         android:layout_height="wrap_content"
+        android:onClick="click2"
         android:text="黄色" />
 
     <Button
-        android:onClick="click3"
         android:layout_width="match_parent"
-        android:text="设置activity全屏"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="click3"
+        android:text="设置activity全屏,内容填充状态栏" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click4"
+        android:text="隐藏导航栏" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click5"
+        android:text="设置全屏" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click6"
+        android:text="全屏内容显示,显示导航栏和状态栏" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="click7"
+        android:text="设置导航栏的颜色" />
 </LinearLayout>

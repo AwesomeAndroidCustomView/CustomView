@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fangsfmac.customview.R;
 
@@ -18,7 +19,7 @@ public class ListDataScreenAdapter extends BaseMenuAdapter {
 
     private Context mContext;
 
-    private String[] mItems ={"类型","品牌","价格","更多"};
+    private String[] mItems = {"类型", "品牌", "价格", "更多"};
 
     public ListDataScreenAdapter(Context context) {
         mContext = context;
@@ -37,6 +38,14 @@ public class ListDataScreenAdapter extends BaseMenuAdapter {
     public View getMenuView(int position, ViewGroup parent) {
         TextView view = (TextView) LayoutInflater.from(mContext).inflate(R.layout.text_view, parent, false);
         view.setText(mItems[position]);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "close", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         return view;
     }

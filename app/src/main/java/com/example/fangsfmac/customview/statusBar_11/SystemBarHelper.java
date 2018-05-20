@@ -42,7 +42,7 @@ public class SystemBarHelper {
             // 安卓系统4.0 需要适配 FitsSystemWindows true
             // 从系统中, 获取根布局, 代码中设置根布局 为 true
             ViewGroup contentView = activity.findViewById(android.R.id.content);  // setContentView, 源码
-            contentView.setPadding(0,getBarHeight(activity),0,0);
+            contentView.setPadding(0, getBarHeight(activity), 0, 0);
 
             decorView.addView(statusView);
         }
@@ -60,11 +60,11 @@ public class SystemBarHelper {
 
 
     /**
-     * 设置activity全屏, 让activity内容,可以填充至状态栏(但是状态栏要显示处理)
+     * 设置activity全屏, 让activity内容,可以填充至状态栏(但是状态栏要显示)
      *
      * @param activity
      */
-    public static void setActivityTranslucent(Activity activity) {
+    public static void setBarTransparent(Activity activity) {
 
         // > 安卓5.0
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -88,14 +88,27 @@ public class SystemBarHelper {
      */
     public static void setNavigationBarHide(Activity activity) {
 
-        int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
-        activity.getWindow().getDecorView().setSystemUiVisibility(option);
+        View decorView = activity.getWindow().getDecorView();
+        int option = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        decorView.setSystemUiVisibility(option);
 
     }
 
     /**
-     * 设置activity全屏, 内容填充至 状态栏和导航栏
+     * 设置导航栏的颜色
+     */
+    public static void setNavigationBarColor(Activity activity, int color) {
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorView = activity.getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+            decorView.setSystemUiVisibility(option);
+            activity.getWindow().setNavigationBarColor(color);
+        }
+    }
+
+
+    /**
+     * 设置activity全屏, 内容填充至 状态栏和导航栏,状态栏和导航栏 透明
      *
      * @param activity
      */
