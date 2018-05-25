@@ -93,6 +93,7 @@ public class SlideMenuLayout extends HorizontalScrollView {
         // 算出,梯度值, 往右边滑动, contentView,缩放,
         float scale = 1f * l / mMenuWidth;  // 梯度值的变化是 1 -> 0
         // 往右边滑动,contentView, 需要缩放的范围是 最大是1f,最小是0.7f
+        Log.i(TAG, "onScrollChanged: scale " + scale + " l ");
         float rightScale = 0.7f + (scale * 0.3f);
         Log.i("TAG", "onScrollChanged: rightScale " + rightScale);
         ViewCompat.setPivotX(mContentView, 0);
@@ -168,8 +169,11 @@ public class SlideMenuLayout extends HorizontalScrollView {
         Log.i(TAG, "onTouchEvent: " + ev.getAction());
         if (mIsIntercept) {
             if (ev.getAction() == MotionEvent.ACTION_UP) {
-                closeMenu();  // 当按下了右边的内容的contentview 的时候, 如果是手指抬起的时候,消费事件, 关闭侧滑
-                return true;  // 拦截了事件, 不调用自身的viewGroup的onTouchEvent() 方法
+                // 判断滑动的 距离 有没有超过 menuWidth
+                if (getScaleX() > mMenuWidth /2) {
+                    closeMenu();  // 当按下了右边的内容的contentview 的时候, 如果是手指抬起的时候,消费事件, 关闭侧滑
+                    return true;  // 拦截了事件, 不调用自身的viewGroup的onTouchEvent() 方法
+                }
             }
         }
 
