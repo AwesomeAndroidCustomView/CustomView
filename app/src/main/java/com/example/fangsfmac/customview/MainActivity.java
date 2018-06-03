@@ -11,6 +11,7 @@ import com.example.fangsfmac.customview.kuguo_slideMenu_08.KuGuoSlideMenuActivit
 import com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity;
 import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
 import com.example.fangsfmac.customview.loadingView_15.LoadingActivity;
+import com.example.fangsfmac.customview.messageDragView_16.MessageDragActivity;
 import com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity;
 import com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity;
 import com.example.fangsfmac.customview.qqSlideMenu_09.QQSlideMenuActivity;
@@ -90,5 +91,9 @@ public class MainActivity extends BaseActivity {
 
     public void click15(View view) {
         jumpAct(LoadingActivity.class);
+    }
+
+    public void click16(View view) {
+        jumpAct(MessageDragActivity.class);
     }
 }

@@ -30,7 +30,8 @@
         <activity android:name=".custom_Behavior_12.CustomBehaviorActivity" />
         <activity android:name=".FiveEightCityLoad_13.LoadViewActivity" />
         <activity android:name=".DropDownView_14.DropDownActivity" />
-        <activity android:name=".loadingView_15.LoadingActivity"></activity>
+        <activity android:name=".loadingView_15.LoadingActivity" />
+        <activity android:name=".messageDragView_16.MessageDragActivity"></activity>
     </application>
 
 </manifest>

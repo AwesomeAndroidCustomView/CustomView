@@ -62,7 +62,7 @@ public class CustomBehavior extends CoordinatorLayout.Behavior {
             }
 
         } else {
-            // 列表往下滑动
+            // 列表往上滑动
             // 在屏幕显示出来
             if (mIsShow) {
                 child.animate().translationY(0).setDuration(400).start(); //恢复到原来的位置

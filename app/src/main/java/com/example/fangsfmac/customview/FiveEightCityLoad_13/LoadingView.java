@@ -190,7 +190,7 @@ public class LoadingView extends LinearLayout {
         mShapeView.clearAnimation();
         mShadowView.clearAnimation();
 
-        // 并且,把loadingView 移除  (防止view还在屏幕上, 影响时间的触发)
+        // 并且,把loadingView 移除  (防止view还在屏幕上, 影响事件的触发)
         ViewGroup parent = (ViewGroup) getParent();
         if (parent != null) {
             parent.removeView(this);

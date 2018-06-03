@@ -129,13 +129,13 @@ public class QQSlideMenuLayout extends HorizontalScrollView {
 
         mContentView = container.getChildAt(1);
 
-        //先将 需要添加阴影的view, 抽离出来, 在这个view的最外层添加一个view, 这个view将原来需要的操作的view 添加进去, 最外层的view, add 一个阴影的view
 
 
         ViewGroup.LayoutParams contentViewParams = mContentView.getLayoutParams();
         contentViewParams.width = getScreenWidth(getContext());
         mContentView.setLayoutParams(contentViewParams);
 
+        //先将 需要添加阴影的view, 抽离出来, 在这个view的最外层添加一个view, 这个view将原来需要的操作的view 添加进去, 最外层的view, add 一个阴影的view
         container.removeView(mContentView);
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
         relativeLayout.addView(mContentView);
