@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.AllMessageDragActivity_16.AllMessageDragActivity">
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context="com.example.fangsfmac.customview.AllMessageDragActivity_17.AllMessageDragActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvMes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tv_circle_shape"
+        android:gravity="center"
+        android:text="99+"
+        android:textColor="#fff" />
+
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="按钮" />
+
+</LinearLayout>

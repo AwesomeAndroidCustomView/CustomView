@@ -49,7 +49,7 @@ public class SystemBarHelper {
 
     }
 
-    private static int getBarHeight(Activity activity) {
+    public static int getBarHeight(Activity activity) {
         int resId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resId > 0) {
             Log.i(TAG, "getBarHeight: " + activity.getResources().getDimensionPixelOffset(resId));
