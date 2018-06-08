@@ -101,4 +101,8 @@ public class MainActivity extends BaseActivity {
     public void click17(View view) {
         jumpAct(AllMessageDragActivity.class);
     }
+
+    public void click18(View view) {
+        jumpAct(LiveStarActivity.class);
+    }
 }

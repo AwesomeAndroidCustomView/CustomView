@@ -32,7 +32,8 @@
         <activity android:name=".DropDownView_14.DropDownActivity" />
         <activity android:name=".loadingView_15.LoadingActivity" />
         <activity android:name=".messageDragView_16.MessageDragActivity" />
-        <activity android:name=".AllMessageDragActivity_17.AllMessageDragActivity"></activity>
+        <activity android:name=".AllMessageDragActivity_17.AllMessageDragActivity" />
+        <activity android:name=".LiveStar_18.LiveStarActivity"></activity>
     </application>
 
 </manifest>

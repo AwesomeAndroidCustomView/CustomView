@@ -118,6 +118,13 @@
                 android:onClick="click17"
                 android:text="任意view都能拖拽消失" />
 
+ <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click18"
+
+                android:text="直播点赞效果" />
+
 
 
 
