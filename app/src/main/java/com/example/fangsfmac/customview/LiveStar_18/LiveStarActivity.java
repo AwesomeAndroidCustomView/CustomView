@@ -19,6 +19,8 @@ public class LiveStarActivity extends AppCompatActivity {
     }
 
     public void click1(View view) {
-        mStarLayout.addLove();
+        for (int i = 0; i < 20; i++) {
+            mStarLayout.addLove();
+        }
     }
 }
