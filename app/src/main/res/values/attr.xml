@@ -52,11 +52,19 @@
     </declare-styleable>
 
 
-    <declare-styleable name="SlideMenuLayout" >
+    <declare-styleable name="SlideMenuLayout">
         <attr name="menuRightMargin" format="dimension" />
     </declare-styleable>
 
-    <declare-styleable name="QQSlideMenuLayout" >
+    <declare-styleable name="QQSlideMenuLayout">
         <attr name="QQmenuRightMargin" format="dimension" />
     </declare-styleable>
+
+    <!-- X方向上的位移 , 在布局解析的时候, 设置该属性的 位移 -->
+    <attr name="translationXIn" format="float" />
+    <attr name="translationXOut" format="float" />
+    <!-- Y方向上的位移 -->
+    <attr name="translationYIn" format="float" />
+    <attr name="translationYOut" format="float" />
+
 </resources>

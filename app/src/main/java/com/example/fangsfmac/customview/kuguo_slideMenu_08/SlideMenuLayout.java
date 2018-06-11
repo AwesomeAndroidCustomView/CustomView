@@ -143,7 +143,8 @@ public class SlideMenuLayout extends HorizontalScrollView {
         mContentView.setLayoutParams(contentViewParams);
 
 
-        // 在这里调用不响应, 因为view的绘制流程中, onFinishInflate(), 这个方法是在setContentView() 解析后,后面还会再调用onLayout() 方法,再一次摆放了布局
+        // 在这里调用不响应, 因为view的绘制流程中, onFinishInflate(), 这个方法是在setContentView() 解析后,
+        // 后面还会再调用onLayout() 方法,再一次摆放了布局
         //        scrollTo(mMenuWidth, 0);
     }
 

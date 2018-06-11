@@ -9,6 +9,7 @@ import com.example.fangsfmac.customview.LiveStar_18.LiveStarActivity;
 import com.example.fangsfmac.customview.colorTrackTextView_02.ColorTrackTextViewActivity;
 import com.example.fangsfmac.customview.custom_Behavior_12.CustomBehaviorActivity;
 import com.example.fangsfmac.customview.foldView_10.FoldViewActivity;
+import com.example.fangsfmac.customview.kuguo_parallax_19.KuGouParallaxActivity;
 import com.example.fangsfmac.customview.kuguo_slideMenu_08.KuGuoSlideMenuActivity;
 import com.example.fangsfmac.customview.letterIndexView_06.LetterIndexActivity;
 import com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity;
@@ -105,5 +106,9 @@ public class MainActivity extends BaseActivity {
 
     public void click18(View view) {
         jumpAct(LiveStarActivity.class);
+    }
+
+    public void click19(View view) {
+        jumpAct(KuGouParallaxActivity.class);
     }
 }

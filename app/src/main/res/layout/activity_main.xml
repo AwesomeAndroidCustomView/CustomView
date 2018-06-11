@@ -106,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="click15"
                 android:text="花束直播加载效果" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,15 +119,18 @@
                 android:onClick="click17"
                 android:text="任意view都能拖拽消失" />
 
- <Button
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="click18"
 
                 android:text="直播点赞效果" />
 
-
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click19"
+                android:text="酷狗启动页视差动画" />
 
 
         </LinearLayout>
