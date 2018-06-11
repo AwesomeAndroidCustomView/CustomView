@@ -80,7 +80,7 @@ public class ParallaxFragment extends Fragment implements LayoutInflaterFactory 
         }
 
 
-        return null;
+        return view;  // 需要返回自己解析的view
     }
 
     private void analysisAttrs(View view, Context context, AttributeSet attrs) {
@@ -89,9 +89,9 @@ public class ParallaxFragment extends Fragment implements LayoutInflaterFactory 
 
         if (array != null && array.getIndexCount() != 0) {
             int n = array.getIndexCount();
+            ParallaxTag tag = new ParallaxTag();
             for (int i = 0; i < n; i++) {
                 int attr = array.getIndex(i);
-                ParallaxTag tag = new ParallaxTag();
                 switch (attr) {
                     case 0:
                         tag.translationXIn = array.getFloat(attr, 0f);

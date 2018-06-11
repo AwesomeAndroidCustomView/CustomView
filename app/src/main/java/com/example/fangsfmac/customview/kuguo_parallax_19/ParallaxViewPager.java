@@ -47,6 +47,7 @@ public class ParallaxViewPager extends ViewPager {
             fragment.setArguments(bundle);
             mFragmentList.add(fragment);
         }
+        setAdapter(new ParallaxAdapter(fm));
 
         addOnPageChangeListener(new OnPageChangeListener() {
             @Override
@@ -70,33 +71,33 @@ public class ParallaxViewPager extends ViewPager {
         });
 
 
-        setAdapter(new ParallaxAdapter(fm));
+
     }
 
     private void analysisAttrs(int position, int positionOffsetPixels) {
         // 左边的fragment
         ParallaxFragment outFragment = mFragmentList.get(position);
-        Log.i("TAG", " outFragment: " + outFragment.toString() + " positionOffsetPixels " + positionOffsetPixels);
+        Log.i("TAG1", " outFragment: " + outFragment.toString() + " positionOffsetPixels " + positionOffsetPixels);
         // 获取该view 的 属性值
         List<View> parallaxViews = outFragment.getParallaxViews();
-        for (View leftView : parallaxViews) {
-            ParallaxTag tag = (ParallaxTag) leftView.getTag(R.id.parallax_tag);
+        for (View parallaxView : parallaxViews) {
+            ParallaxTag tag = (ParallaxTag) parallaxView.getTag(R.id.parallax_tag);
 
-            leftView.setTranslationX(-positionOffsetPixels * tag.translationXOut);
-            leftView.setTranslationY(-positionOffsetPixels * tag.translationYOut);
+            parallaxView.setTranslationX((-positionOffsetPixels) * tag.translationXOut);
+            parallaxView.setTranslationY((-positionOffsetPixels )* tag.translationYOut);
         }
 
 
         try {
             // 右边的fragment
             ParallaxFragment inFragment = mFragmentList.get(position + 1);
-            Log.i("TAG", " inFragment: " + inFragment.toString());
-            parallaxViews = outFragment.getParallaxViews();
-            for (View rightView : parallaxViews) {
-                ParallaxTag tag = (ParallaxTag) rightView.getTag(R.id.parallax_tag);
+            Log.i("TAG1", " inFragment: " + inFragment.toString());
+            parallaxViews = inFragment.getParallaxViews();
+            for (View parallaxView : parallaxViews) {
+                ParallaxTag tag = (ParallaxTag) parallaxView.getTag(R.id.parallax_tag);
 
-                rightView.setTranslationX(getMeasuredWidth() - positionOffsetPixels * tag.translationXIn);
-                rightView.setTranslationY(getMeasuredWidth() - positionOffsetPixels * tag.translationYIn);
+                parallaxView.setTranslationX((getMeasuredWidth() - positionOffsetPixels) * tag.translationXIn);
+                parallaxView.setTranslationY((getMeasuredWidth() - positionOffsetPixels) * tag.translationYIn);
             }
 
         } catch (Exception e) {

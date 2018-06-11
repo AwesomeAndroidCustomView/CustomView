@@ -28,7 +28,7 @@ public class KuGouParallaxActivity extends AppCompatActivity {
 
         mParallaxVP.setLayout(getSupportFragmentManager(),
                 new int[]{R.layout.fragment_page_first, R.layout.fragment_page_second,
-                        R.layout.fragment_page_third, R.layout.fragment_page_first});
+                        R.layout.fragment_page_third});
 
     }
 }
