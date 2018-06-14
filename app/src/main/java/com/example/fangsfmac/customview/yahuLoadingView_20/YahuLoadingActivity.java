@@ -1,5 +1,6 @@
 package com.example.fangsfmac.customview.yahuLoadingView_20;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -17,5 +18,11 @@ public class YahuLoadingActivity extends AppCompatActivity {
 
         mLoadingView = findViewById(R.id.loadingView);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mLoadingView.disappear();
+            }
+        }, 2000);
     }
 }
