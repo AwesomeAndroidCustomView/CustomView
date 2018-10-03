@@ -21,6 +21,7 @@ import com.example.fangsfmac.customview.qqSlideMenu_09.QQSlideMenuActivity;
 import com.example.fangsfmac.customview.ratingbarView_04.RatingBarViewActivity;
 import com.example.fangsfmac.customview.statusBar_11.StatusActivity;
 import com.example.fangsfmac.customview.tagLayout_07.TagLayoutActivity;
+import com.example.fangsfmac.customview.timeControl_20.TimeControlActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -110,5 +111,9 @@ public class MainActivity extends BaseActivity {
 
     public void click19(View view) {
         jumpAct(KuGouParallaxActivity.class);
+    }
+
+    public void click20(View view) {
+        jumpAct(TimeControlActivity.class);
     }
 }

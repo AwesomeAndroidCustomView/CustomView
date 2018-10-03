@@ -133,6 +133,13 @@
                 android:text="酷狗启动页视差动画" />
 
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click20"
+                android:text="时间混动控制" />
+
+
         </LinearLayout>
     </ScrollView>
 

@@ -49,6 +49,7 @@ public class LetterIndexView extends View {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.LetterIndexView);
         mDefaultColor = array.getColor(R.styleable.LetterIndexView_letterDefaultColor, mDefaultColor);
         mSelectedColor = array.getColor(R.styleable.LetterIndexView_letterSelectedColor, mSelectedColor);
+        // 画笔 的 size, 和直接 设置 textsize 好像不同
         mLetterTextSize = array.getDimensionPixelSize(R.styleable.LetterIndexView_letterTextSize, dip2px(mLetterTextSize));
 
 
@@ -62,9 +63,7 @@ public class LetterIndexView extends View {
         mSelectedPaint.setAntiAlias(true);
         mSelectedPaint.setTextSize(mLetterTextSize);
 
-
         array.recycle();
-
     }
 
     private int dip2px(int dp) {

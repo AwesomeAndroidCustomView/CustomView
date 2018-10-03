@@ -91,12 +91,14 @@ public class ColorTrackTextView extends TextView {
         if (!TextUtils.isEmpty(mText)) {
 
             if (mDirection == Direction.DIRECTION_RIGHT_LEFT) { // 从右往左滑
+                // 其实 是两个文字,重叠在一起了
                 // 变色的文字
                 drawText(canvas, 0, middle, mChangePaint);
                 // 不变色的文字
                 drawText(canvas, middle, getWidth(), mOriginPaint);
 
             } else if (mDirection == Direction.DIRECTION_LEFT_RIGHT) {  // 从左往右边滑动
+                // 其实 是两个文字,重叠在一起了
                 // 变色的文字
                 drawText(canvas, getWidth() - middle, getWidth(), mChangePaint);
                 // 不变色的文字

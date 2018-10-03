@@ -33,8 +33,9 @@
         <activity android:name=".loadingView_15.LoadingActivity" />
         <activity android:name=".messageDragView_16.MessageDragActivity" />
         <activity android:name=".AllMessageDragActivity_17.AllMessageDragActivity" />
-        <activity android:name=".LiveStar_18.LiveStarActivity"></activity>
+        <activity android:name=".LiveStar_18.LiveStarActivity" />
         <activity android:name=".kuguo_parallax_19.KuGouParallaxActivity" />
+        <activity android:name=".timeControl_20.TimeControlActivity"></activity>
     </application>
 
 </manifest>
