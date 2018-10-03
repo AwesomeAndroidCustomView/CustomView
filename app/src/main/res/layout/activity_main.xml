@@ -140,7 +140,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="click20"
+                android:onClick="click21"
                 android:text="时间混动控制" />
 
 
