@@ -35,6 +35,7 @@
         <activity android:name=".AllMessageDragActivity_17.AllMessageDragActivity" />
         <activity android:name=".LiveStar_18.LiveStarActivity" />
         <activity android:name=".kuguo_parallax_19.KuGouParallaxActivity" />
+        <activity android:name=".yahuLoadingView_20.YahuLoadingActivity"></activity>
         <activity android:name=".timeControl_20.TimeControlActivity"></activity>
     </application>
 

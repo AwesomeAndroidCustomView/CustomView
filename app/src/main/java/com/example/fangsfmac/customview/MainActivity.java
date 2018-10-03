@@ -116,4 +116,9 @@ public class MainActivity extends BaseActivity {
     public void click20(View view) {
         jumpAct(TimeControlActivity.class);
     }
+
+    public void click20(View view) {
+
+        jumpAct(YahuLoadingActivity.class);
+    }
 }
