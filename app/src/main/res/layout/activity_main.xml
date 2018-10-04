@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="click21"
-                android:text="时间混动控制" />
+                android:text="时间滑动控制" />
 
 
         </LinearLayout>

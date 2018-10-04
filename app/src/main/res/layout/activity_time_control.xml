@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#000"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+  android:layout_height="match_parent"
     tools:context=".timeControl_21.TimeControlActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <com.example.fangsfmac.customview.timeControl_21.TimeControlView
+        android:background="#f2a9a9"
+        android:padding="8dp"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_centerInParent="true" />
+
+
+</RelativeLayout>
