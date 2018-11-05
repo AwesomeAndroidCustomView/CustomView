@@ -54,6 +54,13 @@ public class TimeControlView extends View {
     private Bitmap mOutDragBitmap;
     private int mOutDragDrawableHeight;
 
+    // 可以触摸的范围
+    private int mMinValidateTouchArcRadius;
+    private int mMaxValidateTouchArcRadius;
+
+    // 是否按在了圆上
+    private boolean isDownArc = false;
+
 
     public TimeControlView(Context context) {
         this(context, null);
@@ -197,12 +204,15 @@ public class TimeControlView extends View {
         // 加上一点距离, 图片有误差
         mOutDragDrawableHeight = mOutDragBitmap.getHeight();
 
+        // 设置外圆的大小
         int left = mOutStroke + mOutDragBitmap.getWidth() + getPaddingTop();
         int top = mOutStroke + mOutDragBitmap.getWidth() + getPaddingTop();
         int right = getWidth() - mOutStroke - mOutDragBitmap.getWidth() - getPaddingTop();
         int bottom = getWidth() - mOutStroke - mOutDragBitmap.getWidth() - getPaddingTop();
         mOvalRectF.set(left, top, right, bottom);
 
+        mMinValidateTouchArcRadius = mRadius - (getPaddingTop() + mOutDragBitmap.getHeight());
+        mMaxValidateTouchArcRadius = mRadius;
     }
 
     private void drawBgOutCircle(Canvas canvas) {
@@ -216,20 +226,49 @@ public class TimeControlView extends View {
         float x = event.getX();
         float y = event.getY();
 
-
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                updateCurrentAngle(x, y);
+                if (isTouchArc(x, y)) {
+                    isDownArc = true;
+                    updateCurrentAngle(x, y);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
-                updateCurrentAngle(x, y);
+                if (isDownArc) {
+                    updateCurrentAngle(x, y);
+                }
                 break;
             case MotionEvent.ACTION_UP:
+                isDownArc = false;
                 break;
         }
 
         invalidate();
         return true;
+    }
+
+    /**
+     * 按下时判断按下的点是否按在圆边范围内
+     *
+     * @param x x坐标点
+     * @param y y坐标点
+     */
+    private boolean isTouchArc(float x, float y) {
+        double d = getTouchRadius(x, y);
+        Log.i(TAG, "isTouchArc: " + d + " min " + mMinValidateTouchArcRadius + " max " + mMaxValidateTouchArcRadius);
+        return d >= mMinValidateTouchArcRadius && d <= mMaxValidateTouchArcRadius;
+    }
+
+    /**
+     * 计算某点到圆点的距离
+     *
+     * @param x x坐标点
+     * @param y y坐标点
+     */
+    private double getTouchRadius(float x, float y) {
+        float cx = x - getWidth() / 2;
+        float cy = y - getHeight() / 2;
+        return Math.hypot(cx, cy);
     }
 
     /**
@@ -253,7 +292,12 @@ public class TimeControlView extends View {
             atan = Math.atan(tan_x / tan_y);//求弧边
             System.out.println("TAG  ->  " + " quadrant  " + lastQuadrant + "  Degrees " + (Math.toDegrees(atan)) + "  current  " + (Math.toDegrees(atan) + 360.f));
             mCurrentAngle = (int) Math.toDegrees(atan); //toDegrees方法用于将参数转化为角度。
-            lastQuadrant = 1;
+            if (lastAngle >= 270.f) {
+                mCurrentAngle = 359.f;
+                lastQuadrant = 2;
+            } else {
+                lastQuadrant = 1;
+            }
         }
 
         //02：第二象限-左上角区域
@@ -263,39 +307,33 @@ public class TimeControlView extends View {
             atan = Math.atan(tan_y / tan_x);//求弧边
             //  System.out.println("TAG  ->  " + " quadrant  " + lastQuadrant + "  Degrees " + (Math.toDegrees(atan)) + "  current  " + (Math.toDegrees(atan)));
             mCurrentAngle = (int) Math.toDegrees(atan) + 270.f;
-//            if (lastAngle >= 270.f) { // 防止越界的标志
-//                mCurrentAngle = 359.f;
-//                lastQuadrant = 3;
-//            } else {
-//                lastQuadrant = 2;
-//            }
+            if (lastAngle <= 90.f) {
+                mCurrentAngle = 0;
+                lastQuadrant = 1;
+            } else {
+                lastQuadrant = 2;
+            }
         }
 
         //03：第三象限-左下角区域
-        if (pointX <= 0 && pointY >= 0) {
+        if (pointX <= 0 && pointY >= 0 && lastQuadrant != 1 && lastAngle < 359.f) {
             tan_x = pointX * (-1);
             tan_y = pointY;
             atan = Math.atan(tan_x / tan_y);//求弧边
             // System.out.println("TAG  ->  " + " quadrant  " + lastQuadrant + "  Degrees " + (Math.toDegrees(atan)) + "  current  " + (Math.toDegrees(atan) + 270f));
             mCurrentAngle = (int) Math.toDegrees(atan) + 180f;
-//            if (lastAngle < 90.f) {
-//                mCurrentAngle = 0.f;
-//                lastQuadrant = 2;
-//            } else {
-//                lastQuadrant = 3;
-//            }
+            lastQuadrant = 3;
         }
 
         //04：第四象限-右下角区域
-        if (pointX >= 0 && pointY >= 0) {
+        if (pointX >= 0 && pointY >= 0 && lastQuadrant != 2 && lastAngle >0.f) {
             tan_x = pointX;
             tan_y = pointY;
             atan = Math.atan(tan_y / tan_x);//求弧边
-//            System.out.println("TAG  ->  " + " quadrant  " + lastQuadrant + "  Degrees " + (Math.toDegrees(atan)) + "  current  " + (Math.toDegrees(atan) + 180f));
             mCurrentAngle = (int) Math.toDegrees(atan) + 90.f;
             lastQuadrant = 4;
         }
-        //   System.out.println("TAG  ->  " + " quadrant  " + lastQuadrant + "  Degrees " + (Math.toDegrees(atan)) + "  current  " + (Math.toDegrees(atan) + 180f));
+        System.out.println("lastangle " + lastAngle);
         lastAngle = mCurrentAngle;
     }
 
