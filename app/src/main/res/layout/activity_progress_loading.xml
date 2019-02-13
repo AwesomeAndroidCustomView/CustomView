@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.progressLoading_01.ProgressLoadingActivity">
+    tools:context="com.example.fangsf.customview.progressLoading_01.ProgressLoadingActivity">
 
 
-    <com.example.fangsfmac.customview.progressLoading_01.ProgressLoadView
+    <com.example.fangsf.customview.progressLoading_01.ProgressLoadView
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:id="@+id/progressView"

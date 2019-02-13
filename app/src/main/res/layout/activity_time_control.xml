@@ -7,7 +7,7 @@
   android:layout_height="match_parent"
     tools:context=".timeControl_21.TimeControlActivity">
 
-    <com.example.fangsfmac.customview.timeControl_21.TimeControlView
+    <com.example.fangsf.customview.timeControl_21.TimeControlView
         android:background="#f2a9a9"
         android:padding="8dp"
         android:layout_width="280dp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.custom_Behavior_12.CustomBehaviorActivity">
+    tools:context="com.example.fangsf.customview.custom_Behavior_12.CustomBehaviorActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

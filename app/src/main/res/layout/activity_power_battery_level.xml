@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.powerLoadingView_05.PowerBatteryLevelActivity">
+    tools:context="com.example.fangsf.customview.powerLoadingView_05.PowerBatteryLevelActivity">
 
-    <com.example.fangsfmac.customview.powerLoadingView_05.PowerProgressView
+    <com.example.fangsf.customview.powerLoadingView_05.PowerProgressView
         android:id="@+id/powerView"
         android:layout_width="190dp"
         android:layout_height="190dp"

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.ratingbarView_04.RatingBarViewActivity">
+    tools:context="com.example.fangsf.customview.ratingbarView_04.RatingBarViewActivity">
 
 
-    <com.example.fangsfmac.customview.ratingbarView_04.RatingBarView
+    <com.example.fangsf.customview.ratingbarView_04.RatingBarView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#f2f266"

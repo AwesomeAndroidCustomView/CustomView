@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.fangsfmac.customview.LiveStar_18.LoveStarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.fangsf.customview.LiveStar_18.LoveStarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/star"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.LiveStar_18.LiveStarActivity">
+    tools:context="com.example.fangsf.customview.LiveStar_18.LiveStarActivity">
 
     <Button
         android:layout_width="wrap_content"
@@ -13,4 +13,4 @@
         android:onClick="click1"
         android:layout_height="wrap_content" />
 
-</com.example.fangsfmac.customview.LiveStar_18.LoveStarLayout>
+</com.example.fangsf.customview.LiveStar_18.LoveStarLayout>

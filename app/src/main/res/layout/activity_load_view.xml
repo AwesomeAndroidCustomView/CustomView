@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.FiveEightCityLoad_13.LoadViewActivity">
+    tools:context="com.example.fangsf.customview.FiveEightCityLoad_13.LoadViewActivity">
 
-    <com.example.fangsfmac.customview.FiveEightCityLoad_13.LoadingView
+    <com.example.fangsf.customview.FiveEightCityLoad_13.LoadingView
         android:id="@+id/loadingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </com.example.fangsfmac.customview.FiveEightCityLoad_13.LoadingView>
+    </com.example.fangsf.customview.FiveEightCityLoad_13.LoadingView>
 
 </RelativeLayout>

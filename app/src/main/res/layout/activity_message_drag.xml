@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.messageDragView_16.MessageDragActivity">
+    tools:context="com.example.fangsf.customview.messageDragView_16.MessageDragActivity">
 
-    <com.example.fangsfmac.customview.messageDragView_16.MessageDragView
+    <com.example.fangsf.customview.messageDragView_16.MessageDragView
         android:layout_width="match_parent"
 
         android:layout_height="match_parent" />

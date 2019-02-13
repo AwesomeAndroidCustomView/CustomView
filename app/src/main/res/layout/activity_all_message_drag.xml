@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="50dp"
-    tools:context="com.example.fangsfmac.customview.AllMessageDragActivity_17.AllMessageDragActivity">
+    tools:context="com.example.fangsf.customview.AllMessageDragActivity_17.AllMessageDragActivity">
 
 
     <TextView

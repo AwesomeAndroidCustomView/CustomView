@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.MainActivity">
+    tools:context="com.example.fangsf.customview.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -106,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="click15"
                 android:text="花束直播加载效果" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="click19"
                 android:text="酷狗启动页视差动画" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,12 +138,17 @@
                 android:text="雅虎新闻启动页面加载" />
 
 
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="click21"
                 android:text="时间滑动控制" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click22"
+                android:text="22.适用大部分场景的toolbar" />
 
 
         </LinearLayout>

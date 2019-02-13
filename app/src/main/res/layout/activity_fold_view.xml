@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.fangsfmac.customview.foldView_10.VerticalDragListView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.fangsf.customview.foldView_10.VerticalDragListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.foldView_10.FoldViewActivity">
+    tools:context="com.example.fangsf.customview.foldView_10.FoldViewActivity">
 
 
     <TextView
@@ -21,4 +21,4 @@
         android:background="@color/colorAccent"
          />
 
-</com.example.fangsfmac.customview.foldView_10.VerticalDragListView>
+</com.example.fangsf.customview.foldView_10.VerticalDragListView>

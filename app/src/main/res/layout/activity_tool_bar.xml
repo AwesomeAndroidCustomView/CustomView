@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.fangsf.customview.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        app:ToolBarCenterText="中间文字"
+        app:ToolBarCenterTextColor="@color/colorAccent"
+        app:ToolBarCenterTextSize="22sp"
+        app:ToolBarRightIcon="@mipmap/menu" />
+
+
+    <com.example.fangsf.customview.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        app:ToolBarCenterText="中间文字"
+        app:ToolBarCenterTextColor="@color/colorAccent"
+        app:ToolBarCenterTextSize="22sp"
+        app:ToolBarLeftIconMarginLeft="30dp"
+        app:ToolBarRightIcon="@mipmap/menu"
+        app:ToolBarRightIconMarginRight="30dp" />
+
+    <com.example.fangsf.customview.ToolBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        app:ToolBarCenterText="中间文字"
+        app:ToolBarCenterTextColor="@color/colorAccent"
+        app:ToolBarCenterTextSize="22sp"
+        app:ToolBarLeftIcon="@mipmap/menu"
+        app:ToolBarLeftText="返回"
+        app:ToolBarLeftTextColor="#fff"
+        app:ToolBarLeftTextFinishActivity="true"
+        app:ToolBarLeftTextMarginLeft="50dp"
+        app:ToolBarLeftTextSize="20sp"
+        app:ToolBarRightIcon="@mipmap/menu"
+        app:ToolBarRightIconMarginRight="70dp"
+        app:ToolBarRightText="详情"
+        app:ToolBarRightTextColor="#fff" />
+
+
+    <com.example.fangsf.customview.ToolBar
+        android:id="@+id/toolBar2"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        app:ToolBarCenterText="增加原生的menu"
+        app:ToolBarCenterTextColor="#fff"
+        android:layout_gravity="center"
+        app:ToolBarCenterTextSize="22sp" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar3"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+</LinearLayout>

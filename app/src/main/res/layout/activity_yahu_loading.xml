@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark"
-    tools:context="com.example.fangsfmac.customview.yahuLoadingView_20.YahuLoadingActivity">
+    tools:context="com.example.fangsf.customview.yahuLoadingView_20.YahuLoadingActivity">
 
     <include layout="@layout/fragment_page_first" />
 
-    <com.example.fangsfmac.customview.yahuLoadingView_20.LoadingView
+    <com.example.fangsf.customview.yahuLoadingView_20.LoadingView
         android:id="@+id/loadingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

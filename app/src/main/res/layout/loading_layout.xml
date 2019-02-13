@@ -6,7 +6,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <com.example.fangsfmac.customview.FiveEightCityLoad_13.ShapeView
+    <com.example.fangsf.customview.FiveEightCityLoad_13.ShapeView
         android:layout_width="25dp"
         android:id="@+id/shapeView"
         android:layout_height="25dp"

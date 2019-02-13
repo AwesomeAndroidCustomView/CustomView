@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fangsfmac.customview.loadingView_15.LoadingActivity">
+    tools:context="com.example.fangsf.customview.loadingView_15.LoadingActivity">
 
-    <com.example.fangsfmac.customview.loadingView_15.LoadingView
+    <com.example.fangsf.customview.loadingView_15.LoadingView
         android:layout_centerInParent="true"
         android:id="@+id/loadingView"
         android:layout_width="match_parent"

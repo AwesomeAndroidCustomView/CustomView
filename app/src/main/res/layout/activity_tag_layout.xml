@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.tagLayout_07.TagLayoutActivity">
+    tools:context="com.example.fangsf.customview.tagLayout_07.TagLayoutActivity">
 
-    <com.example.fangsfmac.customview.tagLayout_07.TagLayoutView
+    <com.example.fangsf.customview.tagLayout_07.TagLayoutView
         android:layout_width="match_parent"
         android:id="@+id/tagLayout"
         android:layout_height="wrap_content"
@@ -63,6 +63,6 @@
             <!--android:text="娱乐00001" />-->
 
 
-    </com.example.fangsfmac.customview.tagLayout_07.TagLayoutView>
+    </com.example.fangsf.customview.tagLayout_07.TagLayoutView>
 
 </LinearLayout>

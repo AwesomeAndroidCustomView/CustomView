@@ -9,6 +9,29 @@
         <attr name="borderSize" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="ToolBar">
+        <attr name="ToolBarCenterText" format="string" />    <!--中间文字-->
+        <attr name="ToolBarLeftIconMarginLeft" format="dimension" />    <!--左边图片距离左边的距离-->
+        <attr name="ToolBarRightIconMarginRight" format="dimension" />  <!--右边图表距离右边的距离-->
+        <attr name="ToolBarLeftTextMarginLeft" format="dimension" />   <!--左边文字距离左边的距离-->
+        <attr name="ToolBarRightTextMarginRight" format="dimension" />   <!--右边文字距离右边距离-->
+        <attr name="ToolBarRightIcon" format="reference" />  <!--右边的图标-->
+        <attr name="ToolBarRightText" format="string" />   <!--右边文字-->
+        <attr name="ToolBarLeftIcon" format="reference" />  <!--左边的图标-->
+        <attr name="ToolBarLeftText" format="string" /> <!--左边文字-->
+        <attr name="ToolBarFinishActivity" format="boolean" /> <!--是否需要销毁activity-->
+        <attr name="ToolBarCenterTextSize" format="dimension" /> <!--中间文字的大小-->
+        <attr name="ToolBarCenterTextColor" format="color" /> <!--中间文字的颜色-->
+        <attr name="ToolBarLeftTextSize" format="dimension" /> <!--左边文字的大小-->
+        <attr name="ToolBarLeftTextColor" format="color" /> <!--左边文字颜色-->
+        <attr name="ToolBarRightTextSize" format="dimension" /> <!--右边文字大小-->
+        <attr name="ToolBarRightTextColor" format="color" /> <!--右边文字颜色-->
+        <attr name="ToolBarShowLeftIcon" format="boolean" /> <!--是否显示左边的图标-->
+        <attr name="ToolBarLeftTextFinishActivity" format="boolean" /><!--左边的文字是否需要销毁activity-->
+    </declare-styleable>
+
+
+
     <declare-styleable name="ColorTrackTextView">
         <attr name="originColor" format="color" />
         <attr name="changeColor" format="color" />

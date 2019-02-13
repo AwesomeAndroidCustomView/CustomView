@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.fangsfmac.customview.loadingView_03.LoadingViewActivity">
+    tools:context="com.example.fangsf.customview.loadingView_03.LoadingViewActivity">
 
 
-    <com.example.fangsfmac.customview.loadingView_03.ProgressView
+    <com.example.fangsf.customview.loadingView_03.ProgressView
         android:id="@+id/progressView"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -42,7 +42,7 @@
             android:text="测试2" />
     </LinearLayout>
 
-    <com.example.fangsfmac.customview.loadingView_03.ShapeView
+    <com.example.fangsf.customview.loadingView_03.ShapeView
         android:layout_width="50dp"
         android:id="@+id/shapeView"
         android:layout_height="50dp"

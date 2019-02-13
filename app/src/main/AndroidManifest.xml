@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fangsfmac.customview">
+    package="com.example.fangsf.customview">
 
     <application
         android:allowBackup="true"
@@ -9,34 +9,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.fangsf.customview.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".progressLoading_01.ProgressLoadingActivity" />
-        <activity android:name=".colorTrackTextView_02.ColorTrackTextViewActivity" />
-        <activity android:name=".loadingView_03.LoadingViewActivity" />
-        <activity android:name=".ratingbarView_04.RatingBarViewActivity" />
-        <activity android:name=".powerLoadingView_05.PowerBatteryLevelActivity" />
-        <activity android:name=".letterIndexView_06.LetterIndexActivity" />
-        <activity android:name=".tagLayout_07.TagLayoutActivity" />
-        <activity android:name=".kuguo_slideMenu_08.KuGuoSlideMenuActivity" />
-        <activity android:name=".qqSlideMenu_09.QQSlideMenuActivity" />
-        <activity android:name=".foldView_10.FoldViewActivity" />
-        <activity android:name=".statusBar_11.StatusActivity" />
-        <activity android:name=".custom_Behavior_12.CustomBehaviorActivity" />
-        <activity android:name=".FiveEightCityLoad_13.LoadViewActivity" />
-        <activity android:name=".DropDownView_14.DropDownActivity" />
-        <activity android:name=".loadingView_15.LoadingActivity" />
-        <activity android:name=".messageDragView_16.MessageDragActivity" />
-        <activity android:name=".AllMessageDragActivity_17.AllMessageDragActivity" />
-        <activity android:name=".LiveStar_18.LiveStarActivity" />
-        <activity android:name=".kuguo_parallax_19.KuGouParallaxActivity" />
-        <activity android:name=".yahuLoadingView_20.YahuLoadingActivity"></activity>
-        <activity android:name=".timeControl_21.TimeControlActivity"></activity>
+        <activity android:name="com.example.fangsf.customview.progressLoading_01.ProgressLoadingActivity" />
+        <activity android:name="com.example.fangsf.customview.colorTrackTextView_02.ColorTrackTextViewActivity" />
+        <activity android:name="com.example.fangsf.customview.loadingView_03.LoadingViewActivity" />
+        <activity android:name="com.example.fangsf.customview.ratingbarView_04.RatingBarViewActivity" />
+        <activity android:name="com.example.fangsf.customview.powerLoadingView_05.PowerBatteryLevelActivity" />
+        <activity android:name="com.example.fangsf.customview.letterIndexView_06.LetterIndexActivity" />
+        <activity android:name="com.example.fangsf.customview.tagLayout_07.TagLayoutActivity" />
+        <activity android:name="com.example.fangsf.customview.kuguo_slideMenu_08.KuGuoSlideMenuActivity" />
+        <activity android:name="com.example.fangsf.customview.qqSlideMenu_09.QQSlideMenuActivity" />
+        <activity android:name="com.example.fangsf.customview.foldView_10.FoldViewActivity" />
+        <activity android:name="com.example.fangsf.customview.statusBar_11.StatusActivity" />
+        <activity android:name="com.example.fangsf.customview.custom_Behavior_12.CustomBehaviorActivity" />
+        <activity android:name="com.example.fangsf.customview.FiveEightCityLoad_13.LoadViewActivity" />
+        <activity android:name="com.example.fangsf.customview.DropDownView_14.DropDownActivity" />
+        <activity android:name="com.example.fangsf.customview.loadingView_15.LoadingActivity" />
+        <activity android:name="com.example.fangsf.customview.messageDragView_16.MessageDragActivity" />
+        <activity android:name="com.example.fangsf.customview.AllMessageDragActivity_17.AllMessageDragActivity" />
+        <activity android:name="com.example.fangsf.customview.LiveStar_18.LiveStarActivity" />
+        <activity android:name="com.example.fangsf.customview.kuguo_parallax_19.KuGouParallaxActivity" />
+        <activity android:name="com.example.fangsf.customview.yahuLoadingView_20.YahuLoadingActivity"></activity>
+        <activity android:name="com.example.fangsf.customview.timeControl_21.TimeControlActivity"></activity>
+        <activity android:name=".toolbar_22.ToolBarActivity" />
     </application>
 
 </manifest>
