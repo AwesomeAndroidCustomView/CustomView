@@ -1,14 +1,12 @@
 package com.example.fangsf.customview.toolbar_22;
 
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.example.fangsf.customview.BaseActivity;
 import com.example.fangsf.customview.R;
-import com.example.fangsf.customview.ToolBar;
+import com.example.fangsf.customview.widget.ToolBar;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 public class ToolBarActivity extends BaseActivity {

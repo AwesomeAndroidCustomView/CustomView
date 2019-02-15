@@ -150,6 +150,12 @@
                 android:onClick="click22"
                 android:text="22.适用大部分场景的toolbar" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="click23"
+                android:text="23.RecyclerView" />
+
 
         </LinearLayout>
     </ScrollView>

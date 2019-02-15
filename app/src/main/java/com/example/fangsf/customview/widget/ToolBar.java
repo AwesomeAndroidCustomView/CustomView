@@ -1,4 +1,4 @@
-package com.example.fangsf.customview;
+package com.example.fangsf.customview.widget;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.fangsf.customview.R;
 
 
 /**

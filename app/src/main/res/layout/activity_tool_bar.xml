@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.example.fangsf.customview.ToolBar
+    <com.example.fangsf.customview.widget.ToolBar
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_marginBottom="10dp"
@@ -17,7 +17,7 @@
         app:ToolBarRightIcon="@mipmap/menu" />
 
 
-    <com.example.fangsf.customview.ToolBar
+    <com.example.fangsf.customview.widget.ToolBar
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_marginBottom="10dp"
@@ -29,7 +29,7 @@
         app:ToolBarRightIcon="@mipmap/menu"
         app:ToolBarRightIconMarginRight="30dp" />
 
-    <com.example.fangsf.customview.ToolBar
+    <com.example.fangsf.customview.widget.ToolBar
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
@@ -49,7 +49,7 @@
         app:ToolBarRightTextColor="#fff" />
 
 
-    <com.example.fangsf.customview.ToolBar
+    <com.example.fangsf.customview.widget.ToolBar
         android:id="@+id/toolBar2"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
