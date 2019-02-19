@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.fangsf.customview.R;
-import com.example.fangsf.customview.recyclerview_23.ItemDecoration.ItemDecorationActivity;
+import com.example.fangsf.customview.recyclerview_23.ItemDecoration1.ItemDecorationActivity;
 
 public class RecyclerViewAnalysisActivity extends AppCompatActivity {
 
@@ -17,6 +17,7 @@ public class RecyclerViewAnalysisActivity extends AppCompatActivity {
     }
 
     public void click1(View view) {
+        //RecyclerView 自定义分割线
         startActivity(new Intent(this, ItemDecorationActivity.class));
     }
 

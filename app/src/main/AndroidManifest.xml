@@ -39,7 +39,7 @@
         <activity android:name=".timeControl_21.TimeControlActivity" />
         <activity android:name=".toolbar_22.ToolBarActivity" />
         <activity android:name=".recyclerview_23.RecyclerViewAnalysisActivity" />
-        <activity android:name=".recyclerview_23.ItemDecoration.ItemDecorationActivity"></activity>
+        <activity android:name=".recyclerview_23.ItemDecoration1.ItemDecorationActivity"></activity>
     </application>
 
 </manifest>
