@@ -152,6 +152,15 @@ public class ToolBar extends Toolbar {
             mTvLeftText.setText(mLeftText);
         }
 
+        mTvRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRightTextOnClick != null) {
+                    mRightTextOnClick.onClick(v);
+                }
+            }
+        });
+
         if (mIsLeftTextFinishActivity) {
             mTvLeftText.setOnClickListener(new OnClickListener() {
                 @Override
@@ -170,6 +179,16 @@ public class ToolBar extends Toolbar {
             mTvLeftText.setLayoutParams(layoutParams);
         }
 
+    }
+
+    private RightTextOnClick mRightTextOnClick;
+
+    public void setLeftTextOnClick(RightTextOnClick leftTextOnClick) {
+        mRightTextOnClick = leftTextOnClick;
+    }
+
+    public interface RightTextOnClick{
+        void onClick(View view);
     }
 
     private void initView() {
