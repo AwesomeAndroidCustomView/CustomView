@@ -95,8 +95,15 @@ public class ToolBar extends Toolbar {
                 public void onClick(View v) {
                     Context context = v.getContext();
                     if (context instanceof Activity) {
-                        ((Activity) context).finish();
+                        if (mIsFinshActivity) {
+                            ((Activity) context).finish();
+                        }
                     }
+
+                    if (mLeftIconClickListener != null) {
+                        mLeftIconClickListener.onClick(v);
+                    }
+
                 }
             });
         }
@@ -118,7 +125,7 @@ public class ToolBar extends Toolbar {
         }
 
         // 设置左边图片距离左边的位置
-        if(mRightIconMarginRight != 0){
+        if (mRightIconMarginRight != 0) {
             RelativeLayout.LayoutParams rightIconParams = (RelativeLayout.LayoutParams) mIvRight.getLayoutParams();
             rightIconParams.rightMargin = mRightIconMarginRight;
             mIvRight.setLayoutParams(rightIconParams);
@@ -155,23 +162,37 @@ public class ToolBar extends Toolbar {
         mTvRight.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mRightTextOnClick != null) {
-                    mRightTextOnClick.onClick(v);
+                if (mRightTextClickListener != null) {
+                    mRightTextClickListener.onClick(v);
                 }
             }
         });
 
-        if (mIsLeftTextFinishActivity) {
-            mTvLeftText.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Context context = v.getContext();
-                    if (context instanceof Activity) {
+        mIvRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mRightIconClickListener != null) {
+                    mRightIconClickListener.onClick(v);
+                }
+            }
+        });
+
+        mTvLeftText.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                if (context instanceof Activity) {
+                    if (mIsLeftTextFinishActivity) { // 是否需要左边的文字,默认false,结束掉activity, 有的左边的文字是 返回 的字
                         ((Activity) context).finish();
                     }
                 }
-            });
-        }
+
+                if (mLeftTextClickListener != null) {
+                    mLeftTextClickListener.onClick(v);
+                }
+
+            }
+        });
 
         if (mLeftTextMarginLeft != 0) {
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) mTvLeftText.getLayoutParams();
@@ -181,13 +202,43 @@ public class ToolBar extends Toolbar {
 
     }
 
-    private RightTextOnClick mRightTextOnClick;
+    private RightTextClickListener mRightTextClickListener;
 
-    public void setLeftTextOnClick(RightTextOnClick leftTextOnClick) {
-        mRightTextOnClick = leftTextOnClick;
+    public void setRightTextClickListener(RightTextClickListener leftTextOnClick) {
+        mRightTextClickListener = leftTextOnClick;
     }
 
-    public interface RightTextOnClick{
+    public interface RightTextClickListener {
+        void onClick(View view);
+    }
+
+    private LeftTextClickListener mLeftTextClickListener;
+
+    public void setLeftTextClickListener(LeftTextClickListener leftTextClickListener) {
+        mLeftTextClickListener = leftTextClickListener;
+    }
+
+    public interface LeftTextClickListener {
+        void onClick(View view);
+    }
+
+    private LeftIconClickListener mLeftIconClickListener;
+
+    public void setLeftIconClickListener(LeftIconClickListener leftIconClickListener) {
+        mLeftIconClickListener = leftIconClickListener;
+    }
+
+    public interface LeftIconClickListener {
+        void onClick(View view);
+    }
+
+    private RightIconClickListener mRightIconClickListener;
+
+    public void setRightIconClickListener(RightIconClickListener rightIconClickListener) {
+        mRightIconClickListener = rightIconClickListener;
+    }
+
+    public interface RightIconClickListener {
         void onClick(View view);
     }
 
