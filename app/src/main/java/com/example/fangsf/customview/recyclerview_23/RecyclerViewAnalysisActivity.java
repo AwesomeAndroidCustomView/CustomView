@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.fangsf.customview.R;
 import com.example.fangsf.customview.recyclerview_23.ItemDecoration1.ItemDecorationActivity;
+import com.example.fangsf.customview.recyclerview_23.commonAdapter2.CommonAdapterActivity;
 
 public class RecyclerViewAnalysisActivity extends AppCompatActivity {
 
@@ -19,10 +20,11 @@ public class RecyclerViewAnalysisActivity extends AppCompatActivity {
     public void click1(View view) {
         //RecyclerView 自定义分割线
         startActivity(new Intent(this, ItemDecorationActivity.class));
+
     }
 
-    public void click2(View view) {
-
+    public void click2(View view) { //commonAdapter
+        startActivity(new Intent(this, CommonAdapterActivity.class));
     }
 
     public void click3(View view) {
