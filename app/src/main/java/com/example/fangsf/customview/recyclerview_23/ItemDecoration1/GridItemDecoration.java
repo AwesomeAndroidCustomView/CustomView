@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.icu.text.UFormat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -45,16 +47,76 @@ public class GridItemDecoration extends RecyclerView.ItemDecoration {
          *     }
          */
 
-        int childPosition = parent.getChildAdapterPosition(view);
+        int right = mDrawable.getIntrinsicWidth();
+        int bottom = mDrawable.getIntrinsicHeight();
 
-        Log.i(TAG, "getItemOffsets: " + parent.getChildCount() + " -- " + childPosition);
-        // parent.getChildCount() 是不断变化的, 可以第二个view  top 留出位置
-
-        if (((childPosition + 1) % 3) != 0) {  // 当第三个的时候不预留出 right的间隔
-            outRect.right = mDrawable.getIntrinsicWidth();
+        //假如有3列,
+        // 最右边那一列不预留出分割线的位置
+        if (isLastColumn(view, parent)) {
+            right = 0;
         }
-        outRect.bottom = mDrawable.getIntrinsicHeight();
 
+        if (isLastRow(view, parent)) {  //最后一行
+            bottom = 0;
+        }
+
+
+        outRect.right = right;
+        outRect.bottom = bottom;
+
+
+    }
+
+    /**
+     * 是否是最后一行
+     */
+    private boolean isLastRow(View view, RecyclerView parent) {
+
+        //列数
+        int spanCount = getSpanCount(parent);
+
+        // 当前的位置
+        int currentPosition = ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
+
+        // 行数 = 总条目 / 列数 (除不尽的时候,多加1)
+        int rowNum = parent.getAdapter().getItemCount() % spanCount == 0 ?
+                parent.getAdapter().getItemCount() / spanCount : (parent.getAdapter().getItemCount() / spanCount) + 1;
+
+
+        // 最后一行: (当前的位置+1) > (行数-1) * 列数
+        return (currentPosition + 1) > (rowNum - 1) * spanCount;
+    }
+
+    /**
+     * 获取列数
+     */
+    private int getSpanCount(RecyclerView parent) {
+        RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+
+        if (layoutManager instanceof GridLayoutManager) {
+            GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
+            return gridLayoutManager.getSpanCount();
+        }
+
+        return 1;
+    }
+
+    /**
+     * 是否是最后一列
+     *
+     * @param view
+     * @param parent
+     */
+    private boolean isLastColumn(View view, RecyclerView parent) {
+        // 当前view的位置 %  列数 , 为0说明是时候一列
+
+        int currentPosition = ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition(); //源码中getItemOffsets()
+
+        // 获取列数, 只有gridLayoutManager,有这个方法
+
+        int spanCount = getSpanCount(parent);
+
+        return (currentPosition + 1) % spanCount == 0;
     }
 
 

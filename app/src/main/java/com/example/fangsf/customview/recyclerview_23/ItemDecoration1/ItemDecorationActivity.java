@@ -50,7 +50,7 @@ public class ItemDecorationActivity extends BaseActivity {
         mRcView.setAdapter(mRecylcerAdapter);
 
         // 添加分割线
-        mRcView.addItemDecoration(new LinearItemDecoration(this, R.drawable.item_line_shape));
+        mRcView.addItemDecoration(new GridItemDecoration(this, R.drawable.item_line_shape));
 
     }
 
