@@ -202,6 +202,12 @@ public class ToolBar extends Toolbar {
 
     }
 
+    public void setCenterTitle(String title) {
+        if (mTvTitle != null) {
+            mTvTitle.setText(title);
+        }
+    }
+
     private RightTextClickListener mRightTextClickListener;
 
     public void setRightTextClickListener(RightTextClickListener leftTextOnClick) {
