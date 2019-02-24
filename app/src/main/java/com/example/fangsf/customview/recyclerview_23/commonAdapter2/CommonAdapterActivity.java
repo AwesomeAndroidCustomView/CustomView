@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.fangsf.customview.R;
+import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.MultiTypeSupport;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.RecyclerCommonAdapter;
 
 import java.util.ArrayList;
@@ -20,6 +21,10 @@ public class CommonAdapterActivity extends AppCompatActivity {
 
     @BindView(R.id.rcView)
     RecyclerView mRcView;
+
+    List<ChatData> mChatData = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +60,46 @@ public class CommonAdapterActivity extends AppCompatActivity {
 
     }
 
-    public void click2(View view) { //
+    public void click2(View view) { // 多布局
+
+
+        for (int i = 0; i < 30; i++) {
+            if (i % 3 == 0) {
+                mChatData.add(new ChatData("是我的内容", true));
+            }else {
+                mChatData.add(new ChatData("朋友的内容", false));
+            }
+        }
+
+        MultiAdapter adapter = new MultiAdapter(mChatData, new MultiTypeSupport<ChatData>() {
+            @Override
+            public int getLayoutId(ChatData chatData) {
+
+                // 根据数据是那种类型显示那种布局
+                if (chatData.isMe) {
+                    return R.layout.layout_chat_me;
+
+                }else {
+                    return R.layout.layout_chat_friend;
+                }
+            }
+        });
+
+        mRcView.setLayoutManager(new LinearLayoutManager(this));
+        mRcView.setAdapter(adapter);
 
     }
+
+    class ChatData {
+        String content;
+        boolean isMe;
+
+        public ChatData(String content, boolean isMe) {
+            this.content = content;
+            this.isMe = isMe;
+        }
+    }
+
 
 
 }

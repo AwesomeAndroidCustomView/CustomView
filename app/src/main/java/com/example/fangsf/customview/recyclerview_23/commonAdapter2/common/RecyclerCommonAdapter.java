@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+import java.util.Timer;
 
 /**
  * Created by fangsf on 2019/2/22.
@@ -17,6 +18,16 @@ public abstract class RecyclerCommonAdapter<DATA> extends RecyclerView.Adapter<V
     public List<DATA> mData;
     private int mLayoutRes;
     public Context mContext;
+
+    //兼容多布局
+    protected MultiTypeSupport<DATA> mTypeSupport;
+
+    public RecyclerCommonAdapter(List<DATA> data, MultiTypeSupport<DATA> typeSupport) {
+        this(-1, data);
+        mData = data;
+        this.mTypeSupport = typeSupport;
+    }
+
 
     public RecyclerCommonAdapter(int layoutRes, List<DATA> data) {
         mData = data;
@@ -31,9 +42,24 @@ public abstract class RecyclerCommonAdapter<DATA> extends RecyclerView.Adapter<V
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         this.mContext = parent.getContext();
 
+
+        if (mTypeSupport != null) {  // 兼容多布局
+            mLayoutRes = viewType;
+        }
+
+
         View view = LayoutInflater.from(mContext).inflate(mLayoutRes, parent, false);
 
         return new ViewHolder(view);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        if (mTypeSupport != null) { // 兼容多布局
+            return mTypeSupport.getLayoutId(mData.get(position));
+        }
+        return super.getItemViewType(position);
     }
 
     @Override
