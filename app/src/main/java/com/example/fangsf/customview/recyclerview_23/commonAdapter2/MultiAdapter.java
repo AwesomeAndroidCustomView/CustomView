@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.fangsf.customview.R;
+import com.example.fangsf.customview.recyclerview_23.ChatData;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.MultiTypeSupport;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.RecyclerCommonAdapter;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.ViewHolder;
@@ -14,14 +15,14 @@ import java.util.List;
  * Created by fangsf on 2019/2/24
  * Useful:
  */
-public class MultiAdapter extends RecyclerCommonAdapter<CommonAdapterActivity.ChatData> {
+public class MultiAdapter extends RecyclerCommonAdapter<ChatData> {
 
-    public MultiAdapter(List<CommonAdapterActivity.ChatData> chatData, MultiTypeSupport typeSupport) {
+    public MultiAdapter(List<ChatData> chatData, MultiTypeSupport typeSupport) {
         super(chatData, typeSupport);
     }
 
     @Override
-    protected void convert(ViewHolder holder, CommonAdapterActivity.ChatData item) {
+    protected void convert(ViewHolder holder,ChatData item) {
 
         if (item.isMe) {
 

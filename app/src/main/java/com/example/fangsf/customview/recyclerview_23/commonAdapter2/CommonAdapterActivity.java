@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.fangsf.customview.R;
+import com.example.fangsf.customview.recyclerview_23.ChatData;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.MultiTypeSupport;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.RecyclerCommonAdapter;
 
@@ -90,15 +91,6 @@ public class CommonAdapterActivity extends AppCompatActivity {
 
     }
 
-    class ChatData {
-        String content;
-        boolean isMe;
-
-        public ChatData(String content, boolean isMe) {
-            this.content = content;
-            this.isMe = isMe;
-        }
-    }
 
 
 

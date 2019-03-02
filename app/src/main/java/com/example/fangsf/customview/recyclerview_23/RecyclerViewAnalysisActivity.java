@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.fangsf.customview.R;
 import com.example.fangsf.customview.recyclerview_23.ItemDecoration1.ItemDecorationActivity;
 import com.example.fangsf.customview.recyclerview_23.commonAdapter2.CommonAdapterActivity;
+import com.example.fangsf.customview.recyclerview_23.header.HeadFooterActivity;
 
 public class RecyclerViewAnalysisActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class RecyclerViewAnalysisActivity extends AppCompatActivity {
     }
 
     public void click3(View view) {
-
+        startActivity(new Intent(this, HeadFooterActivity.class));
     }
 
 

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".recyclerview_23.header.HeadFooterActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +41,7 @@
         <activity android:name=".toolbar_22.ToolBarActivity" />
         <activity android:name=".recyclerview_23.RecyclerViewAnalysisActivity" />
         <activity android:name=".recyclerview_23.ItemDecoration1.ItemDecorationActivity" />
-        <activity android:name=".recyclerview_23.commonAdapter2.CommonAdapterActivity"></activity>
+        <activity android:name=".recyclerview_23.commonAdapter2.CommonAdapterActivity" />
     </application>
 
 </manifest>
