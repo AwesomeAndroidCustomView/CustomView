@@ -41,18 +41,17 @@ public class HeadFooterActivity extends AppCompatActivity {
 
         WrapRecyclerAdapter recyclerAdapter = new WrapRecyclerAdapter(mRecylcerAdapter);
         LayoutInflater inflater = LayoutInflater.from(this);
-        View headerView = inflater.inflate(R.layout.header_view, null, false);
-        View footerView = inflater.inflate(R.layout.footer_view, null, false);
-
-
-
-        recyclerAdapter.addHeaderView(headerView);
-        recyclerAdapter.addFooterView(footerView);
 
         mRcView.setLayoutManager(new LinearLayoutManager(this));
         mRcView.setAdapter(recyclerAdapter);
 
 
+        View headerView = inflater.inflate(R.layout.header_view, mRcView, false);
+        View footerView = inflater.inflate(R.layout.footer_view, mRcView, false);
+
+
+        recyclerAdapter.addHeaderView(headerView);
+        recyclerAdapter.addFooterView(footerView);
     }
 
 

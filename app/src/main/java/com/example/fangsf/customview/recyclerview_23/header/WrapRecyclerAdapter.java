@@ -72,9 +72,9 @@ public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         // 根据viewType 创建不同的ViewHolder
 
-        if (mHeaderViews.indexOfKey(viewType) > 0) {  // 头部
+        if (mHeaderViews.indexOfKey(viewType) >= 0) {  // 头部
             return createHeaderFooterViewHolder(mHeaderViews.get(viewType));
-        } else if (mFooterViews.indexOfKey(viewType) > 0) {
+        } else if (mFooterViews.indexOfKey(viewType) >= 0) {
             return createHeaderFooterViewHolder(mFooterViews.get(viewType));
         }
 
@@ -95,15 +95,14 @@ public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         //头部
         int numHeaders = mHeaderViews.size();
-        int adjPosition = position - numHeaders; // 实际的中部的位置
-
         if (position < numHeaders ||
                 position >= (mHeaderViews.size() +mAdapter.getItemCount())) { // 头部,尾部不绑定数据
             return;
         }
 
-        // 中部
 
+        // 中部
+        int adjPosition = position - numHeaders; // 实际的中部的位置
         int adapterCount = 0;
         if (mAdapter != null) {
             adapterCount = mAdapter.getItemCount();
