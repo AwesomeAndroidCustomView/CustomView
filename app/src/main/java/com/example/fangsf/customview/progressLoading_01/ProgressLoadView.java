@@ -112,7 +112,7 @@ public class ProgressLoadView extends View {
         super.onDraw(canvas);
 
         //1, 画内圆形
-        RectF rect = new RectF(mBorderWidth / 2, mBorderWidth / 2, getWidth() - mBorderWidth / 2, getWidth() - mBorderWidth - 2);
+        RectF rect = new RectF(mBorderWidth / 2, mBorderWidth / 2, getWidth() - mBorderWidth / 2, getWidth() - mBorderWidth / 2);
         canvas.drawArc(rect, 135, 270, false, mInnerPaint);
 
 

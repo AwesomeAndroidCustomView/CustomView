@@ -18,7 +18,7 @@ import com.example.fangsf.customview.R;
  * Created by fangsfmac on 2018/4/23.
  */
 
-public class ProgressView extends View {
+public class ProgressView2 extends View {
 
     // 内圆的颜色
     private int mInnerColor;
@@ -41,15 +41,15 @@ public class ProgressView extends View {
     private float mCurrentProgress = 0.5f;
 
 
-    public ProgressView(Context context) {
+    public ProgressView2(Context context) {
         this(context, null);
     }
 
-    public ProgressView(Context context, @Nullable AttributeSet attrs) {
+    public ProgressView2(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ProgressView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ProgressView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ProgressView);
@@ -75,7 +75,7 @@ public class ProgressView extends View {
         mOutPaint.setColor(mOutColor);
         mOutPaint.setAntiAlias(true);
         mOutPaint.setStrokeWidth(mBorderWidth);
-        mOutPaint.setStrokeCap(Paint.Cap.ROUND);  // 圆弧
+       // mOutPaint.setStrokeCap(Paint.Cap.ROUND);  // 圆弧
         mOutPaint.setStyle(Paint.Style.STROKE);  // 画笔实心
 
         mTextPaint = new Paint();
@@ -137,20 +137,20 @@ public class ProgressView extends View {
         // 基线
         int baseLine = getHeight() / 2 + dy;
 
-        canvas.drawText(text, dx, baseLine, mTextPaint);
+//        canvas.drawText(text, dx, baseLine, mTextPaint);
     }
 
     public synchronized void setMaxProgress(float maxProgress) {
         mMaxProgress = maxProgress;
     }
 
-    public float getMaxProgress() {
-        return mMaxProgress;
-    }
-
     public synchronized void setCurrentProgress(float currentProgress) {
         mCurrentProgress = currentProgress;
         invalidate();
+    }
+
+    public float getMaxProgress() {
+        return mMaxProgress;
     }
 
     public float getCurrentProgress() {

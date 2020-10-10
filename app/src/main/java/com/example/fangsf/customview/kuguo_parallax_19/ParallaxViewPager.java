@@ -69,9 +69,6 @@ public class ParallaxViewPager extends ViewPager {
 
             }
         });
-
-
-
     }
 
     private void analysisAttrs(int position, int positionOffsetPixels) {

@@ -9,6 +9,12 @@
         <attr name="borderSize" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="MySeekBar" >
+        <attr name="leftIcon" format="reference" />
+        <attr name="rightText" format="string" />
+        <attr name="textMarginRight" format="dimension" />
+    </declare-styleable>
+
     <declare-styleable name="ToolBar">
         <attr name="ToolBarCenterText" format="string" />    <!--中间文字-->
         <attr name="ToolBarLeftIconMarginLeft" format="dimension" />    <!--左边图片距离左边的距离-->
