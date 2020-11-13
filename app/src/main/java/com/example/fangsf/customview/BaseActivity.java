@@ -25,12 +25,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int contentView = bindLayout();
-        View view = LayoutInflater.from(this).inflate(contentView, null, false);
-        setContentView(contentView);
-
-        mBind = ButterKnife.bind(view);
-
+        setContentView(bindLayout());
+        mBind = ButterKnife.bind(this);
         init();
     }
 
