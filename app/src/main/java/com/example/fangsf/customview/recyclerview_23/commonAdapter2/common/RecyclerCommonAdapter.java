@@ -1,13 +1,12 @@
 package com.example.fangsf.customview.recyclerview_23.commonAdapter2.common;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
-import java.util.Timer;
 
 /**
  * Created by fangsf on 2019/2/22.

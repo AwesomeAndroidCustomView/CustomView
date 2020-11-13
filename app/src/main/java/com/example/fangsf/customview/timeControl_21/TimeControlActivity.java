@@ -1,6 +1,6 @@
 package com.example.fangsf.customview.timeControl_21;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.fangsf.customview.R;

@@ -1,18 +1,15 @@
 package com.example.fangsf.customview.recyclerview_23.header;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.example.fangsf.customview.R;
 import com.example.fangsf.customview.recyclerview_23.ChatData;
 import com.example.fangsf.customview.recyclerview_23.ItemDecoration1.adapter.RecylcerAdapter;
-import com.example.fangsf.customview.recyclerview_23.commonAdapter2.CommonAdapter;
-import com.example.fangsf.customview.recyclerview_23.commonAdapter2.MultiAdapter;
-import com.example.fangsf.customview.recyclerview_23.commonAdapter2.common.MultiTypeSupport;
 
 import java.util.ArrayList;
 import java.util.List;

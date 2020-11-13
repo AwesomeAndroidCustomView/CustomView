@@ -1,6 +1,6 @@
 package com.example.fangsf.customview.LiveStar_18;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 

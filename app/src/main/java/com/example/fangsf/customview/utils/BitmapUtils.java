@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.support.annotation.DrawableRes;
+import androidx.annotation.DrawableRes;
 
 
 public class BitmapUtils {

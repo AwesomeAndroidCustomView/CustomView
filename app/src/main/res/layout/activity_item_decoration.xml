@@ -9,7 +9,7 @@
     tools:context=".recyclerview_23.ItemDecoration1.ItemDecorationActivity">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         app:titleTextColor="#fff"
         app:title="RecyclerView 自定义分割线"
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"/>
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

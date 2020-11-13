@@ -2,8 +2,8 @@ package com.example.fangsf.customview.kuguo_parallax_19;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fangsf.customview.R;
 import com.example.fangsf.customview.statusBar_11.SystemBarHelper;

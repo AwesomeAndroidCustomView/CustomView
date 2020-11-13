@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".recyclerview_23.dragswip.DragSwipeActivity"></activity>
+        <activity android:name=".scaleimageview_24.ScaleImageViewActivity"></activity>
+        <activity android:name=".recyclerview_23.dragswip.DragSwipeActivity" />
         <activity android:name=".recyclerview_23.header.HeadFooterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

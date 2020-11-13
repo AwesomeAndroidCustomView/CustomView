@@ -1,9 +1,9 @@
 package com.example.fangsf.customview.colorTrackTextView_02;
 
 import android.graphics.Color;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
