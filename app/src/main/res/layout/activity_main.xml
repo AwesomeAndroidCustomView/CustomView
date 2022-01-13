@@ -156,6 +156,12 @@
                 android:onClick="click23"
                 android:text="23.RecyclerView" />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="coordinatorlayout"
+                android:text="25.coordinatorlayout" />
+
 
         </LinearLayout>
     </ScrollView>

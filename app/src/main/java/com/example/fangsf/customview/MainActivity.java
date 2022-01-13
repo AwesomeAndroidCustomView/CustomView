@@ -7,6 +7,8 @@ import com.example.fangsf.customview.DropDownView_14.DropDownActivity;
 import com.example.fangsf.customview.FiveEightCityLoad_13.LoadViewActivity;
 import com.example.fangsf.customview.LiveStar_18.LiveStarActivity;
 import com.example.fangsf.customview.colorTrackTextView_02.ColorTrackTextViewActivity;
+import com.example.fangsf.customview.coordinatorlayout25.CoorMainActivity;
+import com.example.fangsf.customview.coordinatorlayout25.CoordinatorScrollActivity;
 import com.example.fangsf.customview.custom_Behavior_12.CustomBehaviorActivity;
 import com.example.fangsf.customview.foldView_10.FoldViewActivity;
 import com.example.fangsf.customview.kuguo_parallax_19.KuGouParallaxActivity;
@@ -130,5 +132,9 @@ public class MainActivity extends BaseActivity {
 
     public void click23(View view) {
         startActivity(RecyclerViewAnalysisActivity.class);
+    }
+
+    public void coordinatorlayout(View view) {
+        startActivity(CoorMainActivity.class);
     }
 }

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".scaleimageview_24.ScaleImageViewActivity"></activity>
+        <activity android:name=".coordinatorlayout25.CoorMainActivity"></activity>
+        <activity android:name=".coordinatorlayout25.CoordinatorScrollActivity" />
+        <activity android:name=".scaleimageview_24.ScaleImageViewActivity" />
         <activity android:name=".recyclerview_23.dragswip.DragSwipeActivity" />
         <activity android:name=".recyclerview_23.header.HeadFooterActivity" />
         <activity android:name=".MainActivity">
@@ -44,6 +46,7 @@
         <activity android:name=".recyclerview_23.RecyclerViewAnalysisActivity" />
         <activity android:name=".recyclerview_23.ItemDecoration1.ItemDecorationActivity" />
         <activity android:name=".recyclerview_23.commonAdapter2.CommonAdapterActivity" />
+        <activity android:name=".coordinatorlayout25.CoordinatorScrollActivity" />
     </application>
 
 </manifest>
