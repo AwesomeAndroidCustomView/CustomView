@@ -1,14 +1,12 @@
 # Android 自定义 View 系列
 
-
-
 ### 仿qq进度条加载
 
-<div align=left> <img src=https://raw.githubusercontent.com/checkFang/img/master/preview.gif /> </div>
+<div align=left> <img src=images/ceiling.gif /> </div>
 
 ### Tab 中的 TextView 文字变色
 
-<div align=left> <img src=https://raw.githubusercontent.com/checkFang/img/master/preview1.gif /> </div>
+<div align=left> <img src=images/tag_layout.gif /> </div>
 
 ### 进度加载
 
